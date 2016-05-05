@@ -1,0 +1,247 @@
+//
+//   @shapes
+// ---------------------------------------------------------
+//
+//  Utility classes for vertical and horizontal spacing.
+//
+// ---------------------------------------------------------
+
+//
+//   @vertical
+// --------------------------------------------------------
+
+@mixin vertical-margin-xxl {
+    margin-bottom: spacing('l');
+
+    @include media(query('s')) {
+        margin-bottom: spacing('xl');
+    }
+
+    @include media(query('m')) {
+        margin-bottom: spacing('xxl');
+    }
+}
+
+@mixin vertical-margin-xl {
+    margin-bottom: spacing('m');
+
+    @include media(query('s')) {
+        margin-bottom: spacing('l');
+    }
+
+    @include media(query('m')) {
+        margin-bottom: spacing('xl');
+    }
+}
+
+@mixin vertical-margin-l {
+    margin-bottom: spacing('s');
+
+    @include media(query('s')) {
+        margin-bottom: spacing('m');
+    }
+
+    @include media(query('m')) {
+        margin-bottom: spacing('l');
+    }
+}
+
+@mixin vertical-margin-m {
+    margin-bottom: spacing('xs');
+
+    @include media(query('s')) {
+        margin-bottom: spacing('s');
+    }
+
+    @include media(query('m')) {
+        margin-bottom: spacing('m');
+    }
+}
+
+@mixin vertical-margin-s {
+    margin-bottom: spacing('xs');
+
+    @include media(query('s')) {
+        margin-bottom: spacing('s');
+    }
+}
+
+@mixin vertical-margin-xs {
+    margin-bottom: spacing('xxs');
+
+    @include media(query('s')) {
+        margin-bottom: spacing('xs');
+    }
+}
+
+@mixin vertical-margin-xxs {
+    margin-bottom: spacing('xxs');
+}
+
+
+
+
+@mixin vertical-padding-xxl {
+    padding-bottom: spacing('l');
+    padding-top: spacing('l');
+
+    @include media(query('s')) {
+        padding-bottom: spacing('xl');
+        padding-top: spacing('xl');
+    }
+
+    @include media(query('m')) {
+        padding-bottom: spacing('xxl');
+        padding-top: spacing('xxl');
+    }
+}
+
+@mixin vertical-padding-xl {
+    padding-bottom: spacing('m');
+    padding-top: spacing('m');
+
+    @include media(query('s')) {
+        padding-bottom: spacing('l');
+        padding-top: spacing('l');
+    }
+
+    @include media(query('m')) {
+        padding-bottom: spacing('xl');
+        padding-top: spacing('xl');
+    }
+}
+
+@mixin vertical-padding-l {
+    padding-bottom: spacing('s');
+    padding-top: spacing('s');
+
+    @include media(query('s')) {
+        padding-bottom: spacing('m');
+        padding-top: spacing('m');
+    }
+
+    @include media(query('m')) {
+        padding-bottom: spacing('l');
+        padding-top: spacing('l');
+    }
+}
+
+@mixin vertical-padding-m {
+    padding-bottom: spacing('xs');
+    padding-top: spacing('xs');
+
+    @include media(query('s')) {
+        padding-bottom: spacing('s');
+        padding-top: spacing('s');
+    }
+
+    @include media(query('m')) {
+        padding-bottom: spacing('m');
+        padding-top: spacing('m');
+    }
+}
+
+@mixin vertical-padding-s {
+    padding-bottom: spacing('xs');
+    padding-top: spacing('xs');
+
+    @include media(query('s')) {
+        padding-bottom: spacing('s');
+        padding-top: spacing('s');
+    }
+}
+
+@mixin vertical-padding-xs {
+    padding-bottom: spacing('xxs');
+    padding-top: spacing('xxs');
+
+    @include media(query('s')) {
+        padding-bottom: spacing('xs');
+        padding-top: spacing('xs');
+    }
+}
+
+@mixin vertical-padding-xxs {
+    padding-bottom: spacing('xxs');
+    padding-top: spacing('xxs');
+}
+
+
+
+
+//
+//   @horizontal
+// --------------------------------------------------------
+
+@mixin horizontal-margin-xxl {
+    margin-left: spacing('xxl');
+    margin-right: spacing('xxl');
+}
+
+@mixin horizontal-margin-xl {
+    margin-left: spacing('xl');
+    margin-right: spacing('xl');
+}
+
+@mixin horizontal-margin-l {
+    margin-left: spacing('l');
+    margin-right: spacing('l');
+}
+
+@mixin horizontal-margin-m {
+    margin-left: spacing('m');
+    margin-right: spacing('m');
+}
+
+@mixin horizontal-margin-s {
+    margin-left: spacing('s');
+    margin-right: spacing('s');
+}
+
+@mixin horizontal-margin-xs {
+    margin-left: spacing('xs');
+    margin-right: spacing('xs');
+}
+
+@mixin horizontal-margin-xxs {
+    margin-left: spacing('xxs');
+    margin-right: spacing('xxs');
+}
+
+
+
+
+@mixin horizontal-padding-xxl {
+    padding-left: spacing('xxl');
+    padding-right: spacing('xxl');
+}
+
+@mixin horizontal-padding-xl {
+    padding-left: spacing('xl');
+    padding-right: spacing('xl');
+}
+
+@mixin horizontal-padding-l {
+    padding-left: spacing('l');
+    padding-right: spacing('l');
+}
+
+@mixin horizontal-padding-m {
+    padding-left: spacing('m');
+    padding-right: spacing('m');
+}
+
+@mixin horizontal-padding-s {
+    padding-left: spacing('s');
+    padding-right: spacing('s');
+}
+
+@mixin horizontal-padding-xs {
+    padding-left: spacing('xs');
+    padding-right: spacing('xs');
+}
+
+@mixin horizontal-padding-xxs {
+    padding-left: spacing('xxs');
+    padding-right: spacing('xxs');
+}

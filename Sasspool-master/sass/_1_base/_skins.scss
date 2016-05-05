@@ -1,0 +1,81 @@
+//
+//   @skins
+// ---------------------------------------------------------
+//  _1_foundation/_skins.scss
+// ---------------------------------------------------------
+//
+//  Quick classes to change out backgrounds, colors
+//  and borders.
+//
+//  Backgrounds and colors from http://clrs.cc
+//
+// ---------------------------------------------------------
+
+// Default color variables. Overwrite these in _vars.scss
+$colors: (
+  'aqua'    : #7fdbff,
+  'blue'    : #0074d9,
+  'navy'    : #001f3f,
+  'teal'    : #39cccc,
+  'green'   : #2ecc40,
+  'olive'   : #3d9970,
+  'lime'    : #01ff70,
+  'yellow'  : #ffdc00,
+  'orange'  : #ff851b,
+  'red'     : #ff4136,
+  'fuchsia' : #f012be,
+  'purple'  : #b10dc9,
+  'maroon'  : #85144b,
+  'white'   : #fff,
+  'silver'  : #ddd,
+  'gray'    : (
+                'base'  : #aaa,
+                'light' : #ccc,
+                'dark'  : #888
+              ),
+  'black'   : #111,
+)!default;
+
+// Backgrounds and Text Colors
+@mixin bg-color($color, $tone: 'base') {
+    @if type-of(map-get($colors, $color)) == 'map' {
+        background-color: map-get(map-get($colors, $color), $tone);
+    } @else {
+        background-color: map-get($colors, $color);
+    }
+}
+
+@mixin color($color, $tone: 'base') {
+    @if type-of(map-get($colors, $color)) == 'map' {
+        color: map-get(map-get($colors, $color), $tone);
+    } @else {
+        color: map-get($colors, $color);
+    }
+}
+
+// to generate classes for each color, if needed
+// @each $color, $val in $colors {
+//     @if type-of($val) == 'map' {
+//         @each $shade, $shade-val in $val {
+//             @if $shade == 'base' {
+//                 .bg-#{$color}, %bg-#{$color} { background-color: $shade-val; }
+//                 .#{$color}, %#{$color} { color: $shade-val; }
+//             } @else {
+//                 .bg-#{$color}-#{$shade}, %bg-#{$color}-#{$shade} { background-color: $shade-val; }
+//                 .#{$color}-#{$shade}, %#{$color}-#{$shade} { color: $shade-val; }
+//             }
+//         }
+//     } @else {
+//         .bg-#{$color}, %bg-#{$color} { background-color: $val; }
+//         .#{$color}, %#{$color} { color: $val; }
+//     }
+// }
+
+
+
+
+//
+//   @borders
+// --------------------------------------------------------
+
+@mixin border { border: $border-width $border-style $border-color; }

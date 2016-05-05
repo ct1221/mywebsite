@@ -1,0 +1,52 @@
+//
+//   @colors
+// --------------------------------------------------------
+//  _1_base/_mixins/_colors.scss
+// --------------------------------------------------------
+//
+//  Shortcut function to grab the map $colors.
+//
+// --------------------------------------------------------
+
+@function color($color, $tone: 'base', $color-map: $colors) {
+    @if type-of(map-get($color-map, $color)) == 'map' {
+        @return map-get(map-get($color-map, $color), $tone);
+    } @else {
+        @return map-get($color-map, $color);
+    }
+}
+
+
+
+
+//
+//   @shades
+// --------------------------------------------------------
+//
+//  Functions to make shade variables from a base color.
+//
+// --------------------------------------------------------
+
+@function darkest($color) {
+    @return darken($color, 20%);
+}
+
+@function darker($color) {
+    @return darken($color, 13.333%);
+}
+
+@function dark($color) {
+    @return darken($color, 6.667%);
+}
+
+@function light($color) {
+    @return lighten($color, 16.667%);
+}
+
+@function lighter($color) {
+    @return lighten($color, 33.333%);
+}
+
+@function lightest($color) {
+    @return lighten($color, 50%);
+}

@@ -1,0 +1,14 @@
+linters:
+  DuplicateProperty:
+    enabled: false
+
+  PseudoElement:
+    enabled: false
+
+  MergeableSelector:
+    exclude:
+      - '**/_reset.scss'
+
+  Indentation:
+    severity: warning
+    width: 4

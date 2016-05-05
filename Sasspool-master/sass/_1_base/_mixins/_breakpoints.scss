@@ -1,0 +1,46 @@
+//
+//   @breakpoints
+// --------------------------------------------------------
+//  _1_base/_mixins/_breakpoints.scss
+// --------------------------------------------------------
+//
+//  Shortcut function to grab the map $breakpoints.
+//
+// --------------------------------------------------------
+
+@function breakpoint($breakpoint, $size: 'base', $bp-map: $breakpoints) {
+    @if type-of(map-get($bp-map, $breakpoint)) == 'map' {
+        @return map-get(map-get($bp-map, $breakpoint), $size);
+    } @else {
+        @return map-get($bp-map, $breakpoint);
+    }
+}
+
+
+
+
+// --------------------------------------------------------
+//
+//  The query function can be used to quickly create the
+//  query portion of a media query.
+//
+//  Example:
+//
+//  @include media(query('s')) {
+//      styles here...
+//  }
+//
+//  Complex Example:
+//
+//  @include media('screen and #{query('s')} and #{query('900px', $dimension: 'height')}') {
+//      styles here...
+//  }
+//
+// --------------------------------------------------------
+
+@function query($breakpoint, $comparison: 'min', $dimension: 'width', $size: 'base', $bp-map: $breakpoints) {
+    @if map-has-key($bp-map, $breakpoint) {
+        $breakpoint: breakpoint($breakpoint, $size, $bp-map);
+    }
+    @return '(#{$comparison}-#{$dimension}: #{$breakpoint})';
+}

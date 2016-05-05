@@ -1,0 +1,80 @@
+//
+//   @legacy
+// --------------------------------------------------------
+//  _1_base/_mixins/_legacy.scss
+// --------------------------------------------------------
+//
+//  Use this mixin to write styles that are only intended
+//  for use on legacy browsers.
+//
+//  By default, this mixin does not put the contained styles
+//  in the stylesheet.
+//
+//  For "Old IE" style sheets that should get the styles, use:
+//
+//  $legacy: true;
+//
+// --------------------------------------------------------
+
+$legacy: false !default;
+
+
+
+
+@mixin legacy($for-legacy: true) {
+
+    @if $legacy == false and $for-legacy == false  {
+        @content;
+    }
+
+    @if $legacy == true and $for-legacy == true {
+        @content;
+    }
+}
+
+
+
+
+//
+//   @legacy-select
+// --------------------------------------------------------
+//
+//  The legacy-select mixin allows you to chose css selectors
+//  that should be written for modern browsers vs. selectors
+//  that should be for legacy browsers.
+//
+//  The purpose is because some older browsers will kill an
+//  entire style block if it doesn't understand one of the
+//  selectors.
+//
+//  This way, styles to not have to be repeated in your code
+//  (making maintenance much easier).
+//
+//  Example:
+//
+//  @include legacy-select('.example:nth-child(3n)', '.example.large') {
+//      font-size: 1.25em;
+//  }
+//
+// --------------------------------------------------------
+
+@mixin legacy-select($for-modern, $for-legacy, $combined: true) {
+
+    @if $legacy == false  {
+        @if $combined == true {
+            #{$for-legacy}, #{$for-modern} {
+                @content;
+            }
+        } @else {
+            #{$for-modern} {
+                @content;
+            }
+        }
+    }
+
+    @if $legacy == true {
+        #{$for-legacy} {
+            @content;
+        }
+    }
+}

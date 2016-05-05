@@ -1,0 +1,17 @@
+//
+//   @spacing
+// --------------------------------------------------------
+//  _1_base/_mixins/_spacing.scss
+// --------------------------------------------------------
+//
+//  Shortcut function to grab the map $spacing.
+//
+// --------------------------------------------------------
+
+@function spacing($space, $size: 'base', $spacing-map: $spacing) {
+    @if type-of(map-get($spacing-map, $space)) == 'map' {
+        @return map-get(map-get($spacing-map, $space), $size);
+    } @else {
+        @return map-get($spacing-map, $space);
+    }
+}
