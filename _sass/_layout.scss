@@ -34,11 +34,11 @@
       text-align: center;
 
       > svg {
-          width: 18px;
-          height: 15px;
+          width: 30px;
+          height: 28px;
 
           path {
-              fill: $grey-color-dark;
+              fill: $white;
           }
       }
     }
@@ -52,7 +52,7 @@
     }
 
     .page-link {
-        color: $text-color;
+        color: $text-color-light;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the last one

@@ -11,15 +11,17 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #111;
-  background-color: #fdfdfd;
+  font: 400 18px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #e4edf4;
+  background-color: #e4edf4;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
   font-kerning: normal; }
+  body.home-page {
+    background-color: #12a6fb; }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -44,7 +46,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 14px; }
+  font-size: 15.75px; }
 
 /**
  * Lists
@@ -66,12 +68,12 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #2a7ae2;
+  color: #12a6fb;
   text-decoration: none; }
   a:visited {
-    color: #1756a9; }
+    color: #0a75c4; }
   a:hover {
-    color: #111;
+    color: #e4edf4;
     text-decoration: underline; }
 
 /**
@@ -112,16 +114,16 @@ pre {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(800px - (30px * 2));
-  max-width: calc(800px - (30px * 2));
+  max-width: -webkit-calc(830px - (30px * 2));
+  max-width: calc(830px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px; }
   @media screen and (max-width: 800px) {
     .wrapper {
-      max-width: -webkit-calc(800px - (30px));
-      max-width: calc(800px - (30px));
+      max-width: -webkit-calc(830px - (30px));
+      max-width: calc(830px - (30px));
       padding-right: 15px;
       padding-left: 15px; } }
 
@@ -172,16 +174,16 @@ pre {
     padding-top: 10px;
     text-align: center; }
     .site-nav .menu-icon > svg {
-      width: 18px;
-      height: 15px; }
+      width: 30px;
+      height: 28px; }
       .site-nav .menu-icon > svg path {
-        fill: #424242; }
+        fill: #fff; }
   .site-nav .trigger {
     display: none; }
   .site-nav:hover .trigger {
     display: block; }
   .site-nav .page-link {
-    color: #111;
+    color: #e4edf4;
     line-height: 1.5; }
     .site-nav .page-link:not(:last-child) {
       margin-right: 20px; }
@@ -190,7 +192,7 @@ pre {
       position: absolute;
       top: 9px;
       right: 15px;
-      background-color: #fdfdfd;
+      background-color: #e4edf4;
       border: 1px solid #e8e8e8;
       border-radius: 5px;
       text-align: right; }
@@ -269,7 +271,7 @@ pre {
     margin-bottom: 30px; }
 
 .post-meta {
-  font-size: 14px;
+  font-size: 15.75px;
   color: #828282; }
 
 .post-link {
