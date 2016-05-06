@@ -448,3 +448,9 @@ pre {
     color: #008080; }
   .highlight .il {
     color: #099; }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
