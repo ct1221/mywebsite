@@ -189,7 +189,8 @@ pre {
   position: absolute;
   top: 25px;
   left: 30px;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 1; }
   .site-nav .menu-icon {
     display: block;
     width: 30px;
@@ -493,8 +494,8 @@ pre {
 /* - - - - - HOME PAGE - - - - -  */
 .home-page .home.page-content {
   display: table;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 96vh;
   padding: 0; }
   .home-page .home.page-content .home-text {
     position: relative;
@@ -510,7 +511,7 @@ pre {
       margin: 1em auto; }
 .home-page footer {
   position: absolute;
-  bottom: 20px;
+  bottom: 1em;
   width: 100%; }
   .home-page footer .verse {
     float: left;
