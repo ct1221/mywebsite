@@ -159,12 +159,16 @@ pre {
   border: 1px solid #e4edf4;
   padding: 0.25em 1.25em;
   text-align: center;
-  min-width: 115px;
-  cursor: pointer; }
+  min-width: 80px;
+  cursor: pointer;
+  font-size: 12px; }
   .button.transparent {
     background-color: transparent;
-    font-weight: lighter;
-    font-size: 20px; }
+    font-weight: lighter; }
+    @media only screen and (min-width: 800px) {
+      .button.transparent {
+        font-size: 20px;
+        min-width: 115px; } }
 
 /**
  * Site header
@@ -273,9 +277,9 @@ pre {
 .page-heading {
   font-size: 20px; }
   .page-heading.first-line, .page-heading.last-line {
-    font-size: 22.5px; }
+    font-size: 18px; }
   .page-heading.second-line {
-    font-size: 45px; }
+    font-size: 36px; }
   @media only screen and (min-width: 800px) {
     .page-heading.first-line, .page-heading.last-line {
       font-size: 36px; }
@@ -507,8 +511,11 @@ pre {
       margin-bottom: 0;
       line-height: 1.1; }
     .home-page .home.page-content .home-text .button {
-      width: 130px;
+      width: 80px;
       margin: 1em auto; }
+      @media only screen and (min-width: 800px) {
+        .home-page .home.page-content .home-text .button {
+          width: 150px; } }
 .home-page footer {
   position: absolute;
   bottom: 1em;
