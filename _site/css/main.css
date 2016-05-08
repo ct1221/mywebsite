@@ -1,3 +1,6 @@
+/** ========================================= **/
+/** Don't forget to design mobile first bud!! **/
+/** ========================================= **/
 /**
  * Reset some basic elements
  */
@@ -11,7 +14,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 18px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 400 18px/1.5 "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   color: #e4edf4;
   background-color: #e4edf4;
   -webkit-text-size-adjust: 100%;
@@ -19,7 +22,8 @@ body {
   -moz-font-feature-settings: "kern" 1;
   -o-font-feature-settings: "kern" 1;
   font-feature-settings: "kern" 1;
-  font-kerning: normal; }
+  font-kerning: normal;
+  letter-spacing: 0.5px; }
   body.home-page {
     background-color: #12a6fb; }
 
@@ -120,7 +124,7 @@ pre {
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px; }
-  @media screen and (max-width: 800px) {
+  @media only screen and (max-width: 1224px) {
     .wrapper {
       max-width: -webkit-calc(830px - (30px));
       max-width: calc(830px - (30px));
@@ -145,6 +149,22 @@ pre {
   vertical-align: middle; }
   .icon > svg path {
     fill: #828282; }
+  .icon > svg .nav {
+    fill: #e4edf4; }
+
+/**
+ * Buttons
+ */
+.button {
+  border: 1px solid #e4edf4;
+  padding: 0.25em 1.25em;
+  text-align: center;
+  min-width: 115px;
+  cursor: pointer; }
+  .button.transparent {
+    background-color: transparent;
+    font-weight: lighter;
+    font-size: 20px; }
 
 /**
  * Site header
@@ -165,43 +185,31 @@ pre {
     color: #424242; }
 
 .site-nav {
-  line-height: 56px; }
+  line-height: 56px;
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  cursor: pointer; }
   .site-nav .menu-icon {
     display: block;
-    width: 36px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
     line-height: 0;
-    padding-top: 10px;
     text-align: center; }
     .site-nav .menu-icon > svg {
       width: 30px;
-      height: 28px; }
-      .site-nav .menu-icon > svg path {
-        fill: #fff; }
+      height: 30px; }
   .site-nav .trigger {
-    display: none; }
+    display: none;
+    margin-top: 0.5em; }
   .site-nav:hover .trigger {
     display: block; }
   .site-nav .page-link {
     color: #e4edf4;
-    line-height: 1.5; }
-    .site-nav .page-link:not(:last-child) {
-      margin-right: 20px; }
-  @media screen and (max-width: 600px) {
-    .site-nav {
-      position: absolute;
-      top: 9px;
-      right: 15px;
-      background-color: #e4edf4;
-      border: 1px solid #e8e8e8;
-      border-radius: 5px;
-      text-align: right; }
-      .site-nav .page-link {
-        display: block;
-        padding: 5px 10px;
-        margin-left: 20px; }
-        .site-nav .page-link:not(:last-child) {
-          margin-right: 0; } }
+    line-height: 1.995;
+    display: block;
+    font-weight: lighter;
+    cursor: pointer; }
 
 /**
  * Site footer
@@ -241,7 +249,7 @@ pre {
   width: -webkit-calc(45% - (30px / 2));
   width: calc(45% - (30px / 2)); }
 
-@media screen and (max-width: 800px) {
+@media only screen and (max-width: 1224px) {
   .footer-col-1,
   .footer-col-2 {
     width: -webkit-calc(50% - (30px / 2));
@@ -250,7 +258,7 @@ pre {
   .footer-col-3 {
     width: -webkit-calc(100% - (30px / 2));
     width: calc(100% - (30px / 2)); } }
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .footer-col {
     float: none;
     width: -webkit-calc(100% - (30px / 2));
@@ -263,6 +271,20 @@ pre {
 
 .page-heading {
   font-size: 20px; }
+  .page-heading.first-line, .page-heading.last-line {
+    font-size: 22.5px; }
+  .page-heading.second-line {
+    font-size: 45px; }
+  @media only screen and (min-width: 800px) {
+    .page-heading.first-line, .page-heading.last-line {
+      font-size: 36px; }
+    .page-heading.second-line {
+      font-size: 72px; } }
+  @media only screen and (min-width: 1824px) {
+    .page-heading.first-line, .page-heading.last-line {
+      font-size: 45px; }
+    .page-heading.second-line {
+      font-size: 90px; } }
 
 .post-list {
   margin-left: 0;
@@ -288,7 +310,7 @@ pre {
   font-size: 42px;
   letter-spacing: -1px;
   line-height: 1; }
-  @media screen and (max-width: 800px) {
+  @media only screen and (max-width: 1224px) {
     .post-title {
       font-size: 36px; } }
 
@@ -296,17 +318,17 @@ pre {
   margin-bottom: 30px; }
   .post-content h2 {
     font-size: 32px; }
-    @media screen and (max-width: 800px) {
+    @media only screen and (max-width: 1224px) {
       .post-content h2 {
         font-size: 28px; } }
   .post-content h3 {
     font-size: 26px; }
-    @media screen and (max-width: 800px) {
+    @media only screen and (max-width: 1224px) {
       .post-content h3 {
         font-size: 22px; } }
   .post-content h4 {
     font-size: 20px; }
-    @media screen and (max-width: 800px) {
+    @media only screen and (max-width: 1224px) {
       .post-content h4 {
         font-size: 18px; } }
 
@@ -451,8 +473,48 @@ pre {
   .highlight .il {
     color: #099; }
 
+@keyframes slide-down {
+  0% {
+    top: -250px;
+    opacity: 0; }
+  75% {
+    top: 10px; }
+  100% {
+    top: 0;
+    opacity: 1; } }
 @keyframes fade-in {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
+/** ========================================= **/
+/** Don't forget to design mobile first bud!  **/
+/** ========================================= **/
+/* - - - - - HOME PAGE - - - - -  */
+.home-page .home.page-content {
+  display: table;
+  width: 100vw;
+  height: 100vh;
+  padding: 0; }
+  .home-page .home.page-content .home-text {
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    animation: slide-down 2s ease forwards; }
+    .home-page .home.page-content .home-text .page-heading {
+      margin-bottom: 0;
+      line-height: 1.1; }
+    .home-page .home.page-content .home-text .button {
+      width: 130px;
+      margin: 1em auto; }
+.home-page footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%; }
+  .home-page footer .verse {
+    float: left;
+    margin-left: 20px; }
+  .home-page footer .find-me {
+    float: right;
+    margin-right: 20px; }

@@ -3,15 +3,35 @@
 ---
 @charset "utf-8";
 
+/** ========================================= **/
+/** Don't forget to design mobile first bud!! **/
+/** ========================================= **/
 
+// Fonts
+$georgia: Georgia, Cambria, "Times New Roman", Times, serif;
+$helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$lucida-grande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+$monospace: "Bitstream Vera Sans Mono", Consolas, Monaco, 'Andale Mono', monospace;
+$palatino: Palatino, "Times New Roman", Times, serif;
+$verdana: Verdana, Geneva, sans-serif;
 
 // Our variables
-$base-font-family:      "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family:      "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;;
 $base-font-size:        18px;
 $base-font-weight:      400;
 $small-font-size:       $base-font-size * 0.875;
 $base-line-height:      1.5;
 $base-opacity:          0.5;
+
+$displayLarge: 3em;
+$display: 2em;
+$headline: 1.75em;
+$title: 1.5em;
+$subHead: 1.25em;
+$mainBody: 1.15em;
+$body: 1em;
+$caption: 0.85em;
+$miniText: 0.5em;
 
 $spacing-unit:          30px;
 
@@ -35,19 +55,27 @@ $grey-color-dark:       darken($grey-color, 25%);
 $content-width:         830px;
 
 $on-palm:               600px;
-$on-laptop:             800px;
+$on-ipad:               800px;
+$on-laptop:             1224px;
+$on-monitor:            1824px;
 
 
 
 // Use media queries like this:
-// @include media-query($on-palm) {
+// @include min-media-query($on-palm) {
 //     .wrapper {
 //         padding-right: $spacing-unit / 2;
 //         padding-left: $spacing-unit / 2;
 //     }
 // }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
+@mixin min-media-query($device) {
+    @media only screen and (min-width: $device) {
+        @content;
+    }
+}
+
+@mixin max-media-query($device) {
+    @media only screen and (max-width: $device) {
         @content;
     }
 }
@@ -59,5 +87,6 @@ $on-laptop:             800px;
         "base",
         "layout",
         "syntax-highlighting",
-        "animations"
+        "animations",
+        "site"
 ;

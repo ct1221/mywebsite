@@ -23,6 +23,7 @@ body {
     -o-font-feature-settings: "kern" 1;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
+    letter-spacing: 0.5px;
     &.home-page { background-color: $primary-color; }
 }
 
@@ -165,7 +166,7 @@ pre {
     padding-left: $spacing-unit;
     @extend %clearfix;
 
-    @include media-query($on-laptop) {
+    @include max-media-query($on-laptop) {
         max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
         max-width:         calc(#{$content-width} - (#{$spacing-unit}));
         padding-right: $spacing-unit / 2;
@@ -203,5 +204,27 @@ pre {
         path {
             fill: $grey-color;
         }
+        .nav {
+          fill: $background-color;
+        }
     }
+}
+
+
+/**
+ * Buttons
+ */
+.button {
+  border: 1px solid $background-color;
+  padding: 0.25em 1.25em;
+  text-align: center;
+  min-width: 115px;
+  cursor: pointer;
+
+  &.transparent {
+    background-color: transparent;
+    font-weight: lighter;
+    font-size: 20px;
+  }
+
 }
