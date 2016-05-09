@@ -161,7 +161,7 @@ pre {
   text-align: center;
   min-width: 80px;
   cursor: pointer;
-  font-size: 12px; }
+  font-size: 16px; }
   .button.transparent {
     background-color: transparent;
     font-weight: lighter; }
@@ -511,7 +511,7 @@ pre {
       margin-bottom: 0;
       line-height: 1.1; }
     .home-page .home.page-content .home-text .button {
-      width: 80px;
+      width: 115px;
       margin: 1em auto; }
       @media only screen and (min-width: 800px) {
         .home-page .home.page-content .home-text .button {
