@@ -4,7 +4,7 @@ Zepto(function($) {
 
     var verse_button = $('.verse .button');
     // Makes sure Zepto adds class, so functoin only works if Zepto exists.
-    // "hide" class is so that div does not show up on page load.
+    // "hide" class is so that div does not show up on page load. 
     $('.pop-up').addClass('hide');
     $('.pop-up').addClass('active-jq');
     $('.close').on('click', function(e) {
