@@ -17,23 +17,19 @@ $verdana: Verdana, Geneva, sans-serif;
 
 // Our variables
 $base-font-family:      "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;;
-$base-font-size:        18px;
+$base-font-size:        1em;
+$base-size:             16;
 $base-font-weight:      400;
+$light-font-weight:     100;
 $small-font-size:       $base-font-size * 0.875;
 $base-line-height:      1.5;
 $base-opacity:          0.5;
+$box-shadow-opacity:    0.3;
 
-$displayLarge: 3em;
-$display: 2em;
-$headline: 1.75em;
-$title: 1.5em;
-$subHead: 1.25em;
-$mainBody: 1.15em;
-$body: 1em;
-$caption: 0.85em;
-$miniText: 0.5em;
+$body: $base-font-size;
+$mini-space: 0.5em;
 
-$spacing-unit:          30px;
+$spacing-unit:          1.875em;
 
 // My Color Additions
 $primary-color:         #12a6fb;
@@ -78,6 +74,14 @@ $on-monitor:            1824px;
     @media only screen and (max-width: $device) {
         @content;
     }
+}
+
+@mixin em($font-size) {
+  font-size: (1 / $base-size) * $font-size+em;
+}
+
+@mixin rem($font-size) {
+  font-size: (1 / $base-size) * $font-size+rem;
 }
 
 

@@ -9,7 +9,6 @@
         width: 100%;
         min-height: 96vh;
         padding: 0;
-
         .home-text {
             position: relative;
             display: table-cell;
@@ -22,20 +21,74 @@
             }
             .button {
                 width: 115px;
-                margin: 1em auto;
+                margin: $body auto;
                 @include min-media-query($on-ipad) {
-                  width: 150px;
+                    width: 150px;
                 }
+            }
+            @include min-media-query($on-ipad) {
+                font-size: 30px;
+            }
+            @include min-media-query($on-monitor) {
+                font-size: 36px;
             }
         }
     }
     footer {
         position: absolute;
-        bottom: 1em;
+        bottom: $body;
         width: 100%;
         .verse {
             float: left;
             margin-left: 20px;
+            position: relative;
+            &:hover .pop-up.active-jq{ 
+              display: block;
+            }
+            .pop-up {
+                position: relative;
+                background-color: $white;
+                color: $text-color-dark;
+                padding: 1.5em;
+                -webkit-box-shadow: 2px 3px 10px 0 rgba(0,0,0,$box-shadow-opacity);
+                -moz-box-shadow: 2px 3px 10px 0 rgba(0,0,0,$box-shadow-opacity);
+                box-shadow: 2px 3px 10px 0 rgba(0,0,0,$box-shadow-opacity);
+                position: absolute;
+                bottom: 70px;
+                left: -25px;
+                -webkit-transition: all 0.5s;
+                transition: all 0.5s;
+                &.hide { display: none; }
+                &.active-jq {
+                    left: -999px;
+                }
+                h4 {
+                    @include em(18);
+                    text-transform: uppercase;
+                    margin-bottom: $mini-space;
+                }
+                p {
+                    font-weight: $light-font-weight;
+                    width: 21.875em;
+                    margin: 0;
+                }
+                span {
+                    padding: 0.5625em 0.9375em;
+                    border: 3px solid $accent-color;
+                    color: $accent-color;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: $mini-space;
+                    right: $mini-space;
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                    cursor: pointer;
+                    &:hover {
+                        color: $white;
+                        background-color: $accent-color;
+                    }
+                }
+            }
         }
         .find-me {
             float: right;
