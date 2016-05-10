@@ -575,7 +575,8 @@ pre {
       bottom: 70px;
       left: -25px;
       -webkit-transition: all 0.5s;
-      transition: all 0.5s; }
+      transition: all 0.5s;
+      font-size: 14px; }
       .home-page footer .verse .pop-up.hide {
         display: none; }
       .home-page footer .verse .pop-up.active-jq {
@@ -602,6 +603,12 @@ pre {
         .home-page footer .verse .pop-up span:hover {
           color: #fff;
           background-color: #cddc39; }
+      @media only screen and (min-width: 800px) {
+        .home-page footer .verse .pop-up {
+          font-size: 16px; } }
+      @media only screen and (min-width: 1824px) {
+        .home-page footer .verse .pop-up {
+          font-size: 18px; } }
   .home-page footer .find-me {
     float: right;
     margin-right: 20px; }

@@ -13,6 +13,7 @@ Zepto(function($){
   })
 
   $('.verse .button').on('click', function (e) {
+    $(this).click(function() {});
     $('.pop-up').removeClass('hide');
     $('.pop-up').toggleClass('active-jq');
     $(this).toggleClass('active');

@@ -42,7 +42,7 @@
             float: left;
             margin-left: 20px;
             position: relative;
-            &:hover .pop-up.active-jq{ 
+            &:hover .pop-up.active-jq{
               display: block;
             }
             .pop-up {
@@ -58,6 +58,7 @@
                 left: -25px;
                 -webkit-transition: all 0.5s;
                 transition: all 0.5s;
+                font-size: 14px;
                 &.hide { display: none; }
                 &.active-jq {
                     left: -999px;
@@ -87,6 +88,12 @@
                         color: $white;
                         background-color: $accent-color;
                     }
+                }
+                @include min-media-query($on-ipad) {
+                    font-size: 16px;
+                }
+                @include min-media-query($on-monitor) {
+                    font-size: 18px;
                 }
             }
         }
