@@ -12,10 +12,10 @@ Zepto(function($){
     verse_button.removeClass('active');
   })
 
-  $('.verse .button').on('click', function (e) {
-    $(this).click(function() {});
+  $(document).on('click', '.verse .button', function (e) {
     $('.pop-up').removeClass('hide');
     $('.pop-up').toggleClass('active-jq');
     $(this).toggleClass('active');
   })
+  $('.verse .button').on('click', function() {});
 })
