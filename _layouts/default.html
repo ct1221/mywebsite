@@ -4,17 +4,18 @@
   {% include head.html %}
 
   <body>
+    <!-- For the opacity fade-in on page load -->
+    <script>document.body.className += 'fade-out';</script>
 
     {% include header.html %}
 
     <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+      {{ content }}
     </div>
 
     {% include footer.html %}
 
   </body>
+  <!-- <div class="layover enter"></div> -->
 
 </html>

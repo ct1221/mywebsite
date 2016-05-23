@@ -15,63 +15,118 @@
   <link rel="alternate" type="application/rss+xml" title="My New Jekyll Website" href="http://ct1221.github.io/mywebsite/feed.xml">
 
   <!-- Script -->
-  <script src="js/zepto.min.js"></script>
-  <script src="js/celtson-js.js"></script>
+  <script src="/js/zepto.min.js"></script>
+  <script src="/js/celtson-js.js"></script>
 </head>
 
 
 <body class="home-page">
+  <!-- For the opacity fade-in on page load -->
+  <script>document.body.className += ' fade-out';</script>
 
-    <header>
+  <section class="home">
 
-        <nav class="site-nav">
-            <a href="#" class="icon menu-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="29" height="24" viewBox="0 0 29 24">
-                <g id="menu-icon">
-                  <rect id="rect-1" class="nav" y="10" width="29" height="3"/>
-                  <rect id="rect-2" class="nav" y="20" width="29" height="3"/>
-                  <rect id="rect-3" class="nav" width="29" height="3"/>
-                </g>
-              </svg>
+  <header>
+      <nav class="site-nav">
+          <a href="#" class="icon menu-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="29" height="24" viewBox="0 0 29 24">
+              <g id="menu-icon">
+                <rect id="rect-1" class="nav" y="10" width="29" height="3"/>
+                <rect id="rect-2" class="nav" y="20" width="29" height="3"/>
+                <rect id="rect-3" class="nav" width="29" height="3"/>
+              </g>
+            </svg>
+          </a>
 
-            </a>
+          <div class="trigger">
+            
+                     
+              <a class="page-link" href="/about/">About Me</a>   
+              <a class="page-link" href="/blog/">Blog</a>   
+              <a class="page-link" href="/portfolio/">My Portfolio</a>  
+          </div>
+      </nav>
 
-            <div class="trigger">
-                 
-                <a class="page-link" href="/about/">About</a>     
-                <a class="page-link" href="/">Home</a>     
-                <a class="page-link" href="/portfolio/">My Portfolio</a>  
-            </div>
-        </nav>
+  </header>
 
-    </header>
+  <div class="home-text">
 
-    <div class="home page-content">
-        <div class="home-text">
+    <h1 class="page-heading first-line">Welcome, I’m Celtson and I am a</h1>
+    <h1 class="page-heading second-line">UX & UI Developer</h1>
+    <h1 class="page-heading last-line">in music city Nashville</h1>
+    <a class="light-link" href="/portfolio"><div class="transparent button">View Portfolio</div></a>
 
-  <h1 class="page-heading first-line">Welcome, I’m Celtson and I am a</h1>
-  <h1 class="page-heading second-line">UX & UI Developer</h1>
-  <h1 class="page-heading last-line">in music city Nashville</h1>
+  </div>
 
-  <div class="transparent button">View Portfolio</div>
+  <!-- Pop Ups -->
+  <div class="popup-container">
 
-</div>
-
+    <div class="pop-up verse">
+      <span class="close">x</span>
+      <h4>Proverbs 14:26</h4>
+      <p>In the fear of The Lord is strong confidence; His children shall have a place of refuge.</p>
     </div>
 
-    <footer>
-      <div class="verse">
-        <div class="pop-up">
-          <span class="close">x</span>
-          <h4>Proverbs 14:26</h4>
-          <p>In the fear of The Lord is strong confidence; His children shall have a place of refuge.</p>
-        </div>
-        <div class="transparent button">Verse</div>
-      </div>
-      <div class="find-me">
-        <div class="transparent button">Find Me</div>
-      </div>
-    </footer>
+    <div class="pop-up social-icons">
+      <a class="hide-on-palm" href="mailto:celtson@gmail.com">
+        <span class="shadow fa-stack fa-2x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+      <a href="https://www.linkedin.com/in/celtson-toote-a444b795?trk=nav_responsive_tab_profile_pic" target="_blank" rel="noopener noreferrer">
+        <span class="shadow fa-stack fa-2x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+      <a href="https://www.facebook.com/CeltsonToote" target="_blank" rel="noopener noreferrer">
+        <span class="shadow fa-stack fa-2x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+      <a class="hide-on-palm" href="http://codepen.io/ct1221/" target="_blank" rel="noopener noreferrer">
+        <span class="shadow fa-stack fa-2x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-codepen fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+      <a class="hide-on-palm" href="https://github.com/ct1221" target="_blank" rel="noopener noreferrer">
+        <span class="shadow fa-stack fa-2x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+      <a href="https://www.quora.com/profile/Celtson-Toote" target="_blank" rel="noopener noreferrer">
+        <span class="shadow fa-stack fa-2x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-stack-1x fa-inverse"><strong>Q</strong></i>
+        </span>
+      </a>
+      <a href="https://soundcloud.com/celtson-toote" target="_blank" rel="noopener noreferrer">
+        <span class="shadow fa-stack fa-2x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+      <a href="https://www.youtube.com/channel/UC9rjwe4trIYP6xjHA7qBLZQ" target="_blank" rel="noopener noreferrer">
+        <span class="shadow fa-stack fa-2x">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+      <span class="close">x</span>
+    </div>
+  </div>
+
+  <footer>
+    <div class="verse-button transparent button">Verse</div>
+    <div class="social-button transparent button">Find Me</div>
+  </footer>
+
+</section>
+
 
 </body>
 

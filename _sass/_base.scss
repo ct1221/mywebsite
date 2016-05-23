@@ -1,6 +1,15 @@
 /**
  * Reset some basic elements
  */
+ * {
+     &,
+     &:before,
+     &:after {
+         box-sizing: border-box;
+         margin: 0;
+     }
+ }
+
 blockquote,
 body,
 dd,
@@ -28,14 +37,17 @@ body {
     color: $text-color-light;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
-    // -webkit-font-feature-settings: "kern" 1;
-    // -o-font-feature-settings: "kern" 1;
-    // font-feature-settings: "kern" 1;
-    // -webkit-font-kerning: normal;
-    // font-kerning: normal;
+    -webkit-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    -webkit-font-kerning: normal;
+    font-kerning: normal;
     letter-spacing: 0.5px;
-    &.home-page {
-        background-color: $primary-color;
+    opacity: 1;
+    @include transition-easy(1s);
+    &.fade-out {
+      opacity: 0;
+      @include transition(none);
     }
 }
 /**
@@ -71,7 +83,7 @@ figure > img {
     display: block;
 }
 figcaption {
-    @include em(14);
+    font-size: em(14);
 }
 /**
  * Lists
@@ -81,8 +93,8 @@ ul {
     margin-left: $spacing-unit;
 }
 li {
-     > ol,
-    > ul {
+     > ul,
+    > ol {
         margin-bottom: 0;
     }
 }
@@ -103,12 +115,17 @@ h6 {
 a {
     color: $primary-color;
     text-decoration: none;
-    &:visited {
-        color: $primary-color-dark;
+    &.light-link {
+      color: $white;
     }
-    &:hover {
-        color: $text-color-light;
-        text-decoration: underline;
+    &.normal {
+        &:visited {
+            color: $primary-color-dark;
+        }
+        &:hover {
+            color: $text-color-light;
+            text-decoration: underline;
+        }
     }
 }
 /**
@@ -132,7 +149,7 @@ code,
 pre {
     font-size: 15px;
     border: 1px solid $grey-color-light;
-    border-radius: 3px;
+    @include border-radius(3px);
     background-color: #eef;
 }
 code {
@@ -196,17 +213,16 @@ pre {
 .button {
     padding: 0.5em 1.25em;
     text-align: center;
-    min-width: 80px;
+    min-width: 125px;
     cursor: pointer;
-    @include em(20);
+    font-size: em(20);
     position: relative;
     &.transparent {
         border: 1px solid $white;
         font-weight: $light-font-weight;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        @include rem(16);
-        &:hover, &.active {
+        @include transition-easy(0.3s);
+        font-size: rem(16);
+        &.active {
             color: $primary-color;
             &::after {
                 width: 100%;
@@ -219,18 +235,141 @@ pre {
             opacity: 0;
             height: 100%;
             top: 0;
-            left: 0;
         }
         @include min-media-query($on-ipad) {
-            @include rem(18);
-            min-width: 115px;
+            font-size: rem(18);
+            min-width: 160px;
         }
     }
     &::after {
         content: "";
         position: absolute;
         z-index: -1;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
+        @include transition-easy(0.3s);
     }
+}
+/**
+ * Display Classes
+ */
+ @include max-media-query($on-palm) { .hide-on-palm { display: none !important; } }
+
+/**
+ * Layover
+ */
+.layover {
+    background-color: $white;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    @include transition-easy(1s);
+    &.exit {
+        width: 0%;
+    }
+    &.enter {
+        animation: enter-page 1s ease-in forwards;
+    }
+}
+/**
+ * Font Awesome
+ */
+@font-face {
+    font-family: 'FontAwesome';
+    // src: url('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?v=4.2.0');
+    src: url('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 16px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include transition-easy(0.3s);
+    color: $white;
+    // vertical-align: -15%;
+    // line-height: 0.75em;
+}
+.fa-border {
+    padding: 0.35em 0.40em 0.25em;
+    border: solid 0.08em #eeeeee;
+    @include border-radius(50%);
+}
+.fa-inverse {
+    color: $primary-color;
+}
+.fa-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+    &.shadow {
+        &:hover {
+            .fa-stack-1x {
+                text-shadow: 0 5px 5px rgba(0,0,0,0.33), 10px 10px 5px rgba(0,0,0,0.07), -10px 10px 5px rgba(0,0,0,0.07);
+            }
+            .fa-stack-2x {
+                text-shadow: 0 4px 3px rgba(0,0,0,0.2), 0 8px 13px rgba(0,0,0,0.07), 0 18px 23px rgba(0,0,0,0.07);
+            }
+        }
+    }
+}
+.fa-stack-1x,
+.fa-stack-2x {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+/* Icon Sizes */
+.fa-stack-1x {
+    line-height: inherit;
+}
+.fa-stack-2x {
+    font-size: 2em;
+}
+.fa-lg {
+    font-size: 1.5em;
+}
+.fa-2x {
+    font-size: 2em;
+}
+/* Icons */
+.fa-circle:before {
+    content: "\f111";
+}
+.fa-circle-o:before {
+    content: "\f10c";
+}
+.fa-facebook:before {
+    content: "\f09a";
+}
+.fa-codepen:before {
+    content: "\f1cb";
+}
+.fa-github:before {
+    content: "\f09b";
+}
+.fa-envelope:before {
+    content: "\f0e0";
+}
+.fa-linkedin:before {
+    content: "\f0e1";
+}
+.fa-youtube:before {
+    content: "\f167";
+}
+.fa-soundcloud:before {
+    content: "\f1be";
+}
+.fa-pinterest:before {
+    content: "\f231";
+}
+.fa-medium:before {
+    content: "\f23a";
 }

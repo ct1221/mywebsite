@@ -48,13 +48,12 @@ $grey-color-light:      lighten($grey-color, 40%);
 $grey-color-dark:       darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:         830px;
+$content-width:         980px;
 
 $on-palm:               600px;
 $on-ipad:               800px;
 $on-laptop:             1224px;
 $on-monitor:            1824px;
-
 
 
 // Use media queries like this:
@@ -76,21 +75,79 @@ $on-monitor:            1824px;
     }
 }
 
-@mixin em($font-size) {
-  font-size: (1 / $base-size) * $font-size+em;
+// From px to em & rems functions.
+@function em($pixel){
+  @return (1/16) * $pixel+em;
+}
+@function rem($pixel){
+  @return (1/16) * $pixel+rem;
 }
 
-@mixin rem($font-size) {
-  font-size: (1 / $base-size) * $font-size+rem;
+// Good ole' mixins for browser fixes!
+@mixin transition-easy($time) {
+    -webkit-transition: all $time ease;
+    -moz-transition: all $time ease;
+    transition: all $time ease;
+}
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    transition: $args;
+}
+@mixin transform($args...) {
+    -webkit-transform:$args;
+    -moz-transform:$args;
+    -ms-transform:$args;
+    transform:$args;
+}
+ @mixin box-shadow($shadows...) {
+    -webkit-box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
 }
 
+// Regulary Used code as mixins
+// ============================
+
+@mixin icon-shadow-hover {
+  &:hover {
+    @include box-shadow(0px 4px 10px -2px rgba(0,0,0,$box-shadow-opacity));
+  }
+}
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+        "animations",
         "base",
         "layout",
         "syntax-highlighting",
-        "animations",
         "site"
 ;

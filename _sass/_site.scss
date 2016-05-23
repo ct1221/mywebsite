@@ -1,105 +1,142 @@
 /** ========================================= **/
 /** Don't forget to design mobile first bud!  **/
 /** ========================================= **/
-
 /* - - - - - HOME PAGE - - - - -  */
 .home-page {
-    .home.page-content {
+    background-color: $primary-color;
+    .home {
+        position: relative;
         display: table;
+        overflow: hidden;
         width: 100%;
-        min-height: 96vh;
-        padding: 0;
+        height: 100vh;
         .home-text {
             position: relative;
             display: table-cell;
+            width: 100%;
+            animation: slide-down 1.5s ease forwards;
             text-align: center;
             vertical-align: middle;
-            animation: slide-down 2s ease forwards;
+            @include min-media-query($on-ipad) {
+                font-size: 36px;
+            }
             .page-heading {
                 margin-bottom: 0;
                 line-height: 1.1;
             }
             .button {
-                width: 115px;
+                width: 140px;
                 margin: $body auto;
                 @include min-media-query($on-ipad) {
-                    width: 150px;
+                    width: 190px;
                 }
-            }
-            @include min-media-query($on-ipad) {
-                font-size: 30px;
-            }
-            @include min-media-query($on-monitor) {
-                font-size: 36px;
+                &:hover {
+                    color: $primary-color;
+                    &::after {
+                        width: 101%;
+                        height: 103%;
+                        opacity: 1;
+                    }
+                }
+                &::after {
+                    top: 50%;
+                    left: 50%;
+                    @include transform(translateX(-50%) translateY(-50%));
+                }
             }
         }
     }
-    footer {
-        position: absolute;
-        bottom: $body;
+    .popup-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        .verse {
-            float: left;
-            margin-left: 20px;
-            position: relative;
-            &:hover .pop-up.active-jq{
-              display: block;
+    }
+    .pop-up {
+        position: absolute;
+        bottom: 70px;
+        font-size: 12px;
+        @include transition-easy(0.3s);
+        @include min-media-query($on-ipad) {
+            font-size: 16px;
+        }
+        @include min-media-query($on-monitor) {
+            font-size: 18px;
+        }
+        &.verse {
+            left: 0;
+            padding: 1.5em;
+            color: $text-color-dark;
+            background-color: $white;
+            @include box-shadow(2px 3px 10px 0 rgba(0,0,0,$box-shadow-opacity));
+            &.active-jq {
+                left: -999px;
             }
-            .pop-up {
-                position: relative;
-                background-color: $white;
-                color: $text-color-dark;
-                padding: 1.5em;
-                -webkit-box-shadow: 2px 3px 10px 0 rgba(0,0,0,$box-shadow-opacity);
-                -moz-box-shadow: 2px 3px 10px 0 rgba(0,0,0,$box-shadow-opacity);
-                box-shadow: 2px 3px 10px 0 rgba(0,0,0,$box-shadow-opacity);
-                position: absolute;
-                bottom: 70px;
-                left: -25px;
-                -webkit-transition: all 0.5s;
-                transition: all 0.5s;
-                font-size: 14px;
-                &.hide { display: none; }
-                &.active-jq {
-                    left: -999px;
-                }
-                h4 {
-                    @include em(18);
-                    text-transform: uppercase;
-                    margin-bottom: $mini-space;
-                }
-                p {
-                    font-weight: $light-font-weight;
-                    width: 21.875em;
-                    margin: 0;
-                }
-                span {
-                    padding: 0.5625em 0.9375em;
-                    border: 3px solid $accent-color;
-                    color: $accent-color;
-                    border-radius: 50%;
-                    position: absolute;
-                    top: $mini-space;
-                    right: $mini-space;
-                    -webkit-transition: all 0.3s;
-                    transition: all 0.3s;
-                    cursor: pointer;
-                    &:hover {
-                        color: $white;
-                        background-color: $accent-color;
-                    }
-                }
-                @include min-media-query($on-ipad) {
-                    font-size: 16px;
-                }
-                @include min-media-query($on-monitor) {
-                    font-size: 18px;
-                }
+            h4 {
+                margin-bottom: $mini-space;
+                text-transform: uppercase;
+                font-size: em(18);
+            }
+            p {
+                width: 21.875em;
+                margin: 0;
+                font-weight: $light-font-weight;
+            }
+            span.close {
+                top: $mini-space;
+                right: $mini-space;
             }
         }
-        .find-me {
+        &.social-icons {
+            right: 20px;
+            &.active-jq {
+                right: -999px;
+            }
+            span.close {
+                right: 0;
+                bottom: 3.5em;
+                color: $white;
+                background-color: $accent-color;
+                @include icon-shadow-hover;
+            }
+        }
+        span.close {
+            position: absolute;
+            padding: 0.5625em 0.9375em;
+            cursor: pointer;
+            color: $accent-color;
+            border: 3px solid $accent-color;
+            @include border-radius(50%);
+            @include transition-easy(0.3s);
+            &:hover {
+                color: $white;
+                background-color: $accent-color;
+            }
+        }
+        &.hide {
+            display: none;
+        }
+    }
+    footer {
+        position: fixed;
+        bottom: $body;
+        left: 0;
+        width: 100%;
+        .verse-button {
+            position: relative;
+            float: left;
+            margin-left: 20px;
+            &::after {
+                left: 0;
+            }
+        }
+        .social-button {
+            position: relative;
             float: right;
             margin-right: 20px;
+            &::after {
+                right: 0;
+            }
         }
     }
 }
