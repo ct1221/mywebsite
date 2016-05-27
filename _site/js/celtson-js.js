@@ -1,8 +1,7 @@
-
 Zepto(function($) {
     // Make page transition smoothly after page load.
     $(window).bind("load", function() {
-      $("body").removeClass('fade-out');
+        $("body").removeClass('fade-out');
     })
 
     // ============= Home Page =============== //
@@ -20,8 +19,8 @@ Zepto(function($) {
     $('.pop-up').addClass('active-jq');
 
     // Make sure remove hide class so transition occurs after page load
-    setTimeout(function(){
-      $('.pop-up').removeClass('hide');
+    setTimeout(function() {
+        $('.pop-up').removeClass('hide');
     }, 1000);
 
     $('.close').on('click', function(e) {
@@ -54,6 +53,58 @@ Zepto(function($) {
         icons_popup.removeClass('hide');
         icons_popup.toggleClass('active-jq');
         $(this).toggleClass('active');
+    })
+
+
+    // ============= About Page =============== //
+    // =============           =============== //
+
+    // 1. Add image class from the div that was clicked to the current active image div
+    // 2. Remove current image class from the div that has an active class
+    // 3. Remove active class
+    // 4. Remove image class from the clicked div
+    // 5. Add active class to the clicked div.
+
+    // $('.pictures').addClass('active-jq');
+    $('.image-container').on("click", function(e) {
+
+        var index = $(this).attr('class').split("-")[2];
+        var index_active = $('.slideshow .image-container.active').index() + 1;
+
+        $('.slideshow .image-container.active').removeClass('image-' + index_active);
+        $('.slideshow .image-container.active').addClass('image-' + index);
+
+        $('.image-container').removeClass('active');
+        $(this).removeClass('image-' + index);
+        $(this).addClass('active');
+    })
+
+    // Code help from: https://gist.github.com/benjamincharity/6058688
+    function smoothScroll(el, to, duration) {
+        if (duration < 0) {
+            return;
+        }
+        var difference = to - $(window).scrollTop();
+        var perTick = difference / duration * 10;
+        this.scrollToTimerCache = setTimeout(function() {
+            if (!isNaN(parseInt(perTick, 10))) {
+                window.scrollTo(0, $(window).scrollTop() + perTick);
+                smoothScroll(el, to, duration - 10);
+            }
+        }.bind(this), 10);
+    }
+
+    // Scroll to specific div using zepto. (It will still scroll even without javascript)
+    // Help from: https://css-tricks.com/snippets/jquery/smooth-scrolling/
+    $('a[href*="#"]:not([href="#"])').on("click", function(e) {
+        e.preventDefault();
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+              smoothScroll($(window), target.offset().top, 500);
+            }
+        }
     })
 
 })

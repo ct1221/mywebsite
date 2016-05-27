@@ -1,6 +1,6 @@
 ---
 layout: portfolio-page
-title: My Portfolio
-weight: 4
+title: Portfolio
+weight: 3
 permalink: /portfolio/
 ---

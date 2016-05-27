@@ -1,15 +1,14 @@
 /**
  * Reset some basic elements
  */
- * {
-     &,
-     &:before,
-     &:after {
-         box-sizing: border-box;
-         margin: 0;
-     }
- }
-
+* {
+    &,
+    &:after,
+    &:before {
+        box-sizing: border-box;
+        margin: 0;
+    }
+}
 blockquote,
 body,
 dd,
@@ -44,10 +43,12 @@ body {
     font-kerning: normal;
     letter-spacing: 0.5px;
     opacity: 1;
+    line-height: $base-line-height;
+    font-weight: $light-font-weight;
     @include transition-easy(1s);
     &.fade-out {
-      opacity: 0;
-      @include transition(none);
+        opacity: 0;
+        @include transition(none);
     }
 }
 /**
@@ -90,7 +91,7 @@ figcaption {
  */
 ol,
 ul {
-    margin-left: $spacing-unit;
+    padding-left: $spacing-unit;
 }
 li {
      > ul,
@@ -116,7 +117,7 @@ a {
     color: $primary-color;
     text-decoration: none;
     &.light-link {
-      color: $white;
+        color: $white;
     }
     &.normal {
         &:visited {
@@ -208,6 +209,15 @@ pre {
     }
 }
 /**
+ * Columns
+ */
+.half-col {
+    @include min-media-query($on-palm) {
+        width: 50%;
+        float: left;
+    }
+}
+/**
  * Buttons
  */
 .button {
@@ -219,7 +229,6 @@ pre {
     position: relative;
     &.transparent {
         border: 1px solid $white;
-        font-weight: $light-font-weight;
         @include transition-easy(0.3s);
         font-size: rem(16);
         &.active {
@@ -251,8 +260,11 @@ pre {
 /**
  * Display Classes
  */
- @include max-media-query($on-palm) { .hide-on-palm { display: none !important; } }
-
+@include max-media-query($on-palm) {
+    .hide-on-palm {
+        display: none !important;
+    }
+}
 /**
  * Layover
  */
@@ -265,7 +277,7 @@ pre {
     z-index: 1;
     @include transition-easy(1s);
     &.exit {
-        width: 0%;
+        width: 0;
     }
     &.enter {
         animation: enter-page 1s ease-in forwards;
@@ -372,4 +384,7 @@ pre {
 }
 .fa-medium:before {
     content: "\f23a";
+}
+.fa-chevron-down:before {
+    content: "\f078";
 }

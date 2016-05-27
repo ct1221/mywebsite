@@ -1,7 +1,7 @@
 <header class="site-header">
 
     <div class="title-wrapper">
-        <a class="site-title" href="{{ site.baseurl }}/">{{ page.title }}</a>
+        <a class="site-title">{{ page.title }}</a>
     </div>
 
     <div class="verse-wrapper">
@@ -23,6 +23,7 @@
         <div class="trigger">
             {% assign pages = site.pages | sort:"weight" %} {% for my_page in pages %} {% if my_page.url != page.url and my_page.title %}
             <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a> {% endif %} {% endfor %}
+            <a class="page-link" href="https://medium.com/@celtsontoote">My Blog</a>
         </div>
     </nav>
 
