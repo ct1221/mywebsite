@@ -10,7 +10,7 @@
 
 // hardware acceleration
 @mixin is-accelerated {
-    transform: translate3d(0, 0, 0);
+    @include transform(translate3d(0, 0, 0));
     // backface-visibility: hidden;
     // perspective: 1000;
 }
@@ -32,8 +32,8 @@
 // }
 
 @keyframes slide-down {
-	0% { transform: translateY(-100px); opacity: 0; }
-	100% { transform: translateY(0); opacity: 1; }
+	0% { @include transform(translateY(-100px)); opacity: 0; }
+	100% { @include transform(translateY(0)); opacity: 1; }
 }
 // 75% { transform: translateY(10px); }
 
@@ -59,15 +59,27 @@
     }
 }
 
+@keyframes floating {
+    0% {
+        @include transform(translateY(0%));
+    }
+    50% {
+         @include transform(translateY(20%) scale(1.01));
+    }
+    100% {
+        @include transform(translateY(0%));
+    }
+}
+
 @keyframes bounce {
 	0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
+    @include transform(translateY(0));
   }
 	40% {
-    transform: translateY(-30px);
+    @include transform(translateY(-30px))
   }
 	60% {
-    transform: translateY(-15px);
+    @include transform(translateY(-15px));
   }
 }
 

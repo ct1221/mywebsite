@@ -65,7 +65,6 @@ Zepto(function($) {
     // 4. Remove image class from the clicked div
     // 5. Add active class to the clicked div.
 
-    // $('.pictures').addClass('active-jq');
     $('.image-container').on("click", function(e) {
 
         var index = $(this).attr('class').split("-")[2];
@@ -77,6 +76,11 @@ Zepto(function($) {
         $('.image-container').removeClass('active');
         $(this).removeClass('image-' + index);
         $(this).addClass('active');
+    })
+
+    $('.image-container .image').on("click", function (e) {
+      $('.image-container .image').removeClass('active');
+      $(this).addClass('active');
     })
 
     // Code help from: https://gist.github.com/benjamincharity/6058688

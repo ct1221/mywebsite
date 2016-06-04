@@ -23,6 +23,7 @@
             .page-heading {
                 margin-bottom: 0;
                 line-height: 1.1;
+                animation: floating 8s $ease-in-out-quad 1.5s infinite;
             }
             .button {
                 width: 140px;
@@ -48,7 +49,7 @@
     }
     .popup-container {
         position: fixed;
-        bottom: 0;
+        bottom: em(10);
         left: 0;
         width: 100%;
     }
@@ -56,9 +57,11 @@
         position: absolute;
         bottom: em(80);
         font-size: 12px;
+        line-height: rem(16);
         @include transition-easy(0.3s);
         @include min-media-query($on-ipad) {
             font-size: 16px;
+            line-height: 1.5rem;
         }
         @include min-media-query($on-monitor) {
             font-size: 18px;
@@ -101,7 +104,7 @@
         }
         span.close {
             position: absolute;
-            padding: 0.3em 1em;
+            padding: 0.5em 0.9em;
             cursor: pointer;
             color: $accent-color;
             border: 3px solid $accent-color;
@@ -111,6 +114,7 @@
                 color: $white;
                 background-color: $accent-color;
             }
+            @include min-media-query($on-ipad) { padding: 0.4em 0.95em; }
         }
         &.hide {
             display: none;
@@ -148,7 +152,6 @@ section.about-intro {
         padding: $spacing-unit;
         color: $text-color-dark;
         margin-left: auto;
-        @include min-media-query($on-ipad) {}
         .button {
             color: $white;
             font-size: $base-font-size;
@@ -162,6 +165,7 @@ section.about-intro {
                 background-color: $accent-color;
                 margin-right: $body;
             }
+            &:hover { @include transform(scale(1.1)); }
         }
     }
     @include min-media-query($on-ipad) {
@@ -170,12 +174,12 @@ section.about-intro {
             position: relative;
             &::before {
                 content: "";
-                background: url('/img/me.png') no-repeat;
-                height: 390px;
+                background: url('/img/me.png') top center/cover no-repeat;
+                height: 520px;
                 position: absolute;
-                bottom: -4.6em;
-                left: -1em;
-                width: 322px;
+                bottom: -5.4em;
+                left: -7.5em;
+                width: 430px;
                 z-index: 1;
             }
         }
@@ -187,7 +191,7 @@ section.about-intro {
 section.expertise {
     background-color: $white;
     color: $text-color-dark;
-    padding: $spacing-unit;
+    padding: $spacing-unit * 2 0;
     position: relative;
     @include box-shadow(inset 0px 3px 10px -1px rgba(0,0,0,0.3));
     ul {
@@ -231,6 +235,7 @@ section.extra-info {
     }
     p {
         font-size: em(18);
+        font-family: "adelle", Georgia, "Times New Roman", Times, serif;
     }
     .pictures {
         text-align: center;
@@ -239,6 +244,7 @@ section.extra-info {
             position: relative;
             text-align: center;
             display: inline-block;
+            margin: 0 1em;
             margin-bottom: $spacing-unit;
             @include transition-easy(0.3s);
         }
@@ -254,7 +260,7 @@ section.extra-info {
             &:hover {
                 @include box-shadow(0 4px 20px -2px rgba(0, 0, 0, 0.3));
             }
-            &:hover + .title {
+            &:hover + .title, &.active + .title {
                 opacity: 1;
                 z-index: 1;
                 bottom: -4em;
@@ -285,7 +291,7 @@ section.extra-info {
                 margin: 0;
             }
             .image {
-                &:hover + .title {
+                &:hover + .title, &.active + .title {
                     bottom: -1em;
                 }
             }

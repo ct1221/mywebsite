@@ -227,11 +227,12 @@ pre {
     cursor: pointer;
     font-size: em(20);
     position: relative;
+    line-height: 1.5rem;
+    @include transition-easy(0.3s);
     &.transparent {
         border: 1px solid $white;
-        @include transition-easy(0.3s);
         font-size: rem(16);
-        &.active {
+        &.active, &:hover {
             color: $primary-color;
             &::after {
                 width: 100%;
@@ -255,6 +256,9 @@ pre {
         position: absolute;
         z-index: -1;
         @include transition-easy(0.3s);
+    }
+    @include min-media-query($on-ipad) {
+      line-height: $base-line-height;
     }
 }
 /**
