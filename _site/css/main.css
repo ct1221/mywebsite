@@ -260,6 +260,16 @@ pre {
     width: 50%;
     float: left; } }
 
+@media only screen and (min-width: 600px) {
+  .col-1-4 {
+    width: 30%;
+    float: left; } }
+
+@media only screen and (min-width: 600px) {
+  .col-3-4 {
+    width: 70%;
+    float: left; } }
+
 /**
  * Buttons
  */
@@ -626,8 +636,7 @@ pre {
  * Page content
  */
 .page-content p {
-  font-size: 1.125em;
-  font-family: "adelle", Georgia, "Times New Roman", Times, serif; }
+  font-size: 1.125em; }
 .page-content h1, .page-content h2 {
   font-size: 2.125em;
   font-weight: 100; }
@@ -918,7 +927,10 @@ pre {
         right: 0;
         bottom: 3.5em;
         color: #fff;
-        background-color: #cddc39; }
+        background-color: #cddc39;
+        -webkit-box-shadow: 0px 4px 10px -2px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 4px 10px -2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 4px 10px -2px rgba(0, 0, 0, 0.2); }
         .home-page .pop-up.social-icons span.close:hover {
           -webkit-box-shadow: 0px 4px 10px -2px rgba(0, 0, 0, 0.5);
           -moz-box-shadow: 0px 4px 10px -2px rgba(0, 0, 0, 0.5);
@@ -1048,8 +1060,7 @@ section.extra-info {
     font-size: 2.5em;
     text-align: center; }
   section.extra-info p {
-    font-size: 1.125em;
-    font-family: "adelle", Georgia, "Times New Roman", Times, serif; }
+    font-size: 1.25em; }
   section.extra-info .pictures {
     text-align: center;
     padding-top: 2.8125em; }
@@ -1125,3 +1136,103 @@ section.work-info {
 
 section.work-1 {
   background-color: #fff; }
+
+/* - - - - - RESUME TEMPLATE - - - - -  */
+.modal-window {
+  position: fixed;
+  opacity: 0;
+  /* Hides the modal window by default */
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  top: 0;
+  left: -9999px;
+  max-width: 1200px;
+  margin: 0px auto;
+  -webkit-transition: all 0.5s cubic-bezier(0.46, -0.12, 0.1, 1.15);
+  -moz-transition: all 0.5s cubic-bezier(0.46, -0.12, 0.1, 1.15);
+  transition: all 0.5s cubic-bezier(0.46, -0.12, 0.1, 1.15); }
+  .modal-window .resume-header {
+    background-color: #12a6fb;
+    color: #fff;
+    position: relative; }
+    .modal-window .resume-header .site-title {
+      padding: 0 5%;
+      line-height: 2.5em; }
+    .modal-window .resume-header a.close-resume {
+      position: absolute;
+      top: 40px;
+      right: 5%;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+      .modal-window .resume-header a.close-resume:hover {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg); }
+  .modal-window .content {
+    overflow: auto;
+    height: calc(100% - 232px);
+    padding: 0 5%;
+    color: #424242; }
+    .modal-window .content h2 {
+      color: #416277;
+      font-weight: 100;
+      font-size: 1.25em;
+      text-transform: uppercase; }
+      @media only screen and (min-width: 600px) {
+        .modal-window .content h2 {
+          text-align: right;
+          padding-right: 1.875em; } }
+    .modal-window .content .content-section {
+      padding: 5em 0;
+      border-bottom: 1px solid #0a75c4; }
+      .modal-window .content .content-section ul.expertise {
+        float: left;
+        list-style-type: none;
+        width: 50%; }
+        .modal-window .content .content-section ul.expertise li:first-of-type {
+          font-size: 1.25em;
+          font-weight: normal;
+          margin-bottom: 0.5em; }
+      .modal-window .content .content-section .experiences h3 {
+        margin: 0; }
+      .modal-window .content .content-section .experiences span {
+        font-size: 1.125em; }
+      .modal-window .content .content-section:last-of-type {
+        border: none; }
+      .modal-window .content .content-section::after {
+        content: "";
+        display: table;
+        clear: both; }
+  .modal-window .resume-footer {
+    background-color: #12a6fb;
+    padding: 2.2em; }
+    .modal-window .resume-footer .button {
+      width: 200px;
+      margin: 0 auto; }
+      .modal-window .resume-footer .button:hover {
+        color: #12a6fb;
+        background-color: #fff; }
+
+.modal-show {
+  opacity: 1;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.modal-cover {
+  background-color: black;
+  opacity: 0;
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .modal-cover.modal-background {
+    opacity: 0.5;
+    z-index: 1; }

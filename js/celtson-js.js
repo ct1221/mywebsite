@@ -1,5 +1,6 @@
 Zepto(function($) {
     // Make page transition smoothly after page load.
+
     $(window).bind("load", function() {
         $("body").removeClass('fade-out');
     })
@@ -15,6 +16,7 @@ Zepto(function($) {
 
     // Makes sure Zepto adds class, so functoin only works if Zepto exists.
     // "hide" class is so that div does not show up on page load.
+
     $('.pop-up').addClass('hide');
     $('.pop-up').addClass('active-jq');
 
@@ -35,6 +37,7 @@ Zepto(function($) {
     })
 
     // Touch Move event is so that it works on first click for Safari in iPhones/iPads.
+
     verse_button.on('click touchmove', function(e) {
         // Hide the icon's pop up if they are open
         icons_popup.addClass('active-jq');
@@ -78,12 +81,13 @@ Zepto(function($) {
         $(this).addClass('active');
     })
 
-    $('.image-container .image').on("click", function (e) {
-      $('.image-container .image').removeClass('active');
-      $(this).addClass('active');
+    $('.image-container .image').on("click", function(e) {
+        $('.image-container .image').removeClass('active');
+        $(this).addClass('active');
     })
 
     // Code help from: https://gist.github.com/benjamincharity/6058688
+
     function smoothScroll(el, to, duration) {
         if (duration < 0) {
             return;
@@ -100,15 +104,30 @@ Zepto(function($) {
 
     // Scroll to specific div using zepto. (It will still scroll even without javascript)
     // Help from: https://css-tricks.com/snippets/jquery/smooth-scrolling/
+
     $('a[href*="#"]:not([href="#"])').on("click", function(e) {
         e.preventDefault();
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
-              smoothScroll($(window), target.offset().top, 500);
+                smoothScroll($(window), target.offset().top, 500);
             }
         }
     })
+
+    // Resume Modal Code
+
+    //select all the a tag with name equal to modal
+    $('a[name=resume-modal]').click(function(e) {
+        e.preventDefault();
+        $('.modal-cover').addClass('modal-background');
+        $('.modal-window').addClass('modal-show');
+    });
+    $('.modal-window .close-resume').click(function(e) {
+        e.preventDefault();
+        $('.modal-cover').removeClass('modal-background');
+        $('.modal-window').removeClass('modal-show');
+    });
 
 })

@@ -99,6 +99,7 @@
                 bottom: 3.5em;
                 color: $white;
                 background-color: $accent-color;
+                @include box-shadow (0px 4px 10px -2px rgba(0,0,0,0.2));
                 @include icon-shadow-hover;
             }
         }
@@ -234,8 +235,7 @@ section.extra-info {
         text-align: center;
     }
     p {
-        font-size: em(18);
-        font-family: "adelle", Georgia, "Times New Roman", Times, serif;
+        font-size: em(20);
     }
     .pictures {
         text-align: center;
@@ -301,6 +301,7 @@ section.extra-info {
         }
     }
 }
+
 /* - - - - - PORTFOLIO PAGE - - - - -  */
 section.work-info {
   padding: $spacing-unit * 2 0;
@@ -309,4 +310,117 @@ section.work-info {
 }
 section.work-1 {
   background-color: $white;
+}
+
+/* - - - - - RESUME TEMPLATE - - - - -  */
+
+.modal-window {
+    position:fixed;
+    opacity: 0; /* Hides the modal window by default */
+    z-index: 2;
+    width:100%;
+    height: 100vh;
+    background: #fff;
+    top: 0;
+    left: -9999px;
+    max-width: 1200px;
+    margin: 0px auto;
+    @include transition(all 0.5s $ease-in-out-back);
+    .resume-header {
+      background-color: $primary-color;
+      color: $white;
+      position: relative;
+      .site-title{
+        padding: 0 5%;
+        line-height: 2.5em;
+      }
+      a.close-resume {
+        position: absolute;
+        top: 40px;
+        right: 5%;
+        @include transition-easy(0.3s);
+        &:hover {
+          @include transform(rotate(180deg));
+        }
+      }
+    }
+    .content {
+      overflow: auto;
+      height: calc(100% - 232px);
+      padding: 0 5%;
+      color: $grey-color-dark;
+      h2 {
+        color: $text-color-dark2;
+        font-weight: $light-font-weight;
+        font-size: em(20);
+        text-transform: uppercase;
+        @include min-media-query($on-palm) {
+          text-align: right;
+          padding-right: $spacing-unit;
+        }
+      }
+      .content-section {
+        padding: 5em 0;
+        border-bottom: 1px solid $primary-color-dark;
+        ul.expertise {
+          float: left;
+          list-style-type: none;
+          width: 50%;
+          li:first-of-type {
+            font-size: em(20);
+            font-weight: normal;
+            margin-bottom: em(8);
+          }
+        }
+        .experiences {
+          h3 {
+            margin: 0;
+          }
+          span {
+            font-size: em(18);
+          }
+        }
+        &:last-of-type {
+          border: none;
+        }
+        &::after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+      }
+    }
+    .resume-footer {
+      background-color: $primary-color;
+      padding: 2.2em;
+      .button {
+        width: 200px;
+        margin: 0 auto;
+        &:hover {
+          color: $primary-color;
+          background-color: $white;
+        }
+      }
+    }
+}
+
+.modal-show {
+  opacity: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal-cover {
+    background-color: black;
+    opacity: 0;
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    @include transition-easy(0.3s);
+    &.modal-background {
+      opacity: 0.5;
+      z-index: 1;
+    }
 }
