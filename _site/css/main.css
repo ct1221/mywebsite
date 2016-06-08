@@ -375,10 +375,8 @@ pre {
   height: 2em;
   line-height: 2em;
   vertical-align: middle; }
-  .fa-stack.shadow:hover .fa-stack-1x {
-    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.33), 10px 10px 5px rgba(0, 0, 0, 0.07), -10px 10px 5px rgba(0, 0, 0, 0.07); }
   .fa-stack.shadow:hover .fa-stack-2x {
-    text-shadow: 0 4px 3px rgba(0, 0, 0, 0.2), 0 8px 13px rgba(0, 0, 0, 0.07), 0 18px 23px rgba(0, 0, 0, 0.07); }
+    text-shadow: 0 4px 3px rgba(0, 0, 0, 0.1), 0 8px 13px rgba(0, 0, 0, 0.07), 0 18px 23px rgba(0, 0, 0, 0.07); }
 
 .fa-stack-1x,
 .fa-stack-2x {
@@ -558,6 +556,20 @@ pre {
     @media only screen and (min-width: 600px) {
       .site-nav .page-link {
         font-size: 20px; } }
+  @media only screen and (max-width: 600px) {
+    .site-nav:hover .trigger {
+      background-color: white;
+      -webkit-box-shadow: 1px 5px 12px -4px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 1px 5px 12px -4px rgba(0, 0, 0, 0.3);
+      box-shadow: 1px 5px 12px -4px rgba(0, 0, 0, 0.3);
+      margin-top: 0.625em; }
+    .site-nav .page-link {
+      color: #12a6fb; }
+      .site-nav .page-link:hover {
+        color: #12a6fb;
+        border-bottom: 1px solid #12a6fb;
+        border-top: 1px solid #12a6fb;
+        text-indent: 1.25em; } }
 
 /**
  * Site footer
@@ -645,7 +657,7 @@ pre {
   font-size: 1.25em; }
   .page-heading.second-line {
     font-size: 2.5em;
-    text-shadow: 0 4px 3px rgba(0, 0, 0, 0.1), 0 8px 13px rgba(0, 0, 0, 0.07), 0 18px 23px rgba(0, 0, 0, 0.07); }
+    text-shadow: 0 4px 3px rgba(0, 0, 0, 0.03), 0 8px 13px rgba(0, 0, 0, 0.03), 0 8px 0px rgba(0, 0, 0, 0.03); }
 
 .post-list {
   margin-left: 0;
@@ -1150,11 +1162,11 @@ section.work-1 {
   left: -9999px;
   max-width: 1200px;
   margin: 0px auto;
-  -webkit-transition: all 0.5s cubic-bezier(0.46, -0.12, 0.1, 1.15);
-  -moz-transition: all 0.5s cubic-bezier(0.46, -0.12, 0.1, 1.15);
-  transition: all 0.5s cubic-bezier(0.46, -0.12, 0.1, 1.15); }
+  -webkit-transition: all 0.4s cubic-bezier(0.46, -0.12, 0.1, 1.15);
+  -moz-transition: all 0.4s cubic-bezier(0.46, -0.12, 0.1, 1.15);
+  transition: all 0.4s cubic-bezier(0.46, -0.12, 0.1, 1.15); }
   .modal-window .resume-header {
-    background-color: #12a6fb;
+    background-color: #416277;
     color: #fff;
     position: relative; }
     .modal-window .resume-header .site-title {
@@ -1192,7 +1204,8 @@ section.work-1 {
       .modal-window .content .content-section ul.expertise {
         float: left;
         list-style-type: none;
-        width: 50%; }
+        width: 50%;
+        padding: 0; }
         .modal-window .content .content-section ul.expertise li:first-of-type {
           font-size: 1.25em;
           font-weight: normal;
@@ -1201,6 +1214,8 @@ section.work-1 {
         margin: 0; }
       .modal-window .content .content-section .experiences span {
         font-size: 1.125em; }
+      .modal-window .content .content-section .experiences ul {
+        list-style-image: url("/img/bullet.gif"); }
       .modal-window .content .content-section:last-of-type {
         border: none; }
       .modal-window .content .content-section::after {
@@ -1208,13 +1223,13 @@ section.work-1 {
         display: table;
         clear: both; }
   .modal-window .resume-footer {
-    background-color: #12a6fb;
+    background-color: #416277;
     padding: 2.2em; }
     .modal-window .resume-footer .button {
       width: 200px;
       margin: 0 auto; }
       .modal-window .resume-footer .button:hover {
-        color: #12a6fb;
+        color: #416277;
         background-color: #fff; }
 
 .modal-show {

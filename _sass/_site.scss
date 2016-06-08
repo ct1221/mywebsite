@@ -325,9 +325,9 @@ section.work-1 {
     left: -9999px;
     max-width: 1200px;
     margin: 0px auto;
-    @include transition(all 0.5s $ease-in-out-back);
+    @include transition(all 0.4s $ease-in-out-back);
     .resume-header {
-      background-color: $primary-color;
+      background-color: $text-color-dark2;
       color: $white;
       position: relative;
       .site-title{
@@ -366,6 +366,7 @@ section.work-1 {
           float: left;
           list-style-type: none;
           width: 50%;
+          padding: 0;
           li:first-of-type {
             font-size: em(20);
             font-weight: normal;
@@ -379,6 +380,7 @@ section.work-1 {
           span {
             font-size: em(18);
           }
+          ul { list-style-image: url("/img/bullet.gif"); }
         }
         &:last-of-type {
           border: none;
@@ -391,13 +393,13 @@ section.work-1 {
       }
     }
     .resume-footer {
-      background-color: $primary-color;
+      background-color: $text-color-dark2;
       padding: 2.2em;
       .button {
         width: 200px;
         margin: 0 auto;
         &:hover {
-          color: $primary-color;
+          color: $text-color-dark2;
           background-color: $white;
         }
       }

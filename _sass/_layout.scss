@@ -111,6 +111,22 @@
             font-size: 20px;
         }
     }
+    @include max-media-query($on-palm) {
+      &:hover .trigger {
+          background-color: white;
+          @include box-shadow(1px 5px 12px -4px rgba(0,0,0, 0.3));
+          margin-top: em(10);
+      }
+      .page-link {
+        color: $primary-color;
+        &:hover {
+          color: $primary-color;
+          border-bottom: 1px solid $primary-color;
+          border-top: 1px solid $primary-color;
+          text-indent: em(20);
+        }
+      }
+    }
 }
 /**
  * Site footer
@@ -198,7 +214,7 @@
     font-size: em(20);
     &.second-line {
         font-size: $base-font-size * 2.5;
-        text-shadow: 0 4px 3px rgba(0,0,0,0.1), 0 8px 13px rgba(0,0,0,0.07), 0 18px 23px rgba(0,0,0,0.07);
+        text-shadow: 0 4px 3px rgba(0, 0, 0, 0.03), 0 8px 13px rgba(0, 0, 0, 0.03), 0 8px 0px rgba(0, 0, 0, 0.03);;
     }
 }
 .post-list {
