@@ -863,18 +863,16 @@ pre {
       position: relative;
       display: table-cell;
       width: 100%;
-      animation: slide-down 1.5s ease forwards;
       text-align: center;
       vertical-align: middle; }
       @media only screen and (min-width: 800px) {
         .home-page .home .home-text {
-          font-size: 36px; } }
+          font-size: 36px;
+          animation: slide-down 1.5s ease forwards; } }
       .home-page .home .home-text .page-heading {
         margin-bottom: 0;
-        line-height: 1.1; }
-        @media only screen and (min-width: 800px) {
-          .home-page .home .home-text .page-heading {
-            animation: floating 8s cubic-bezier(0.455, 0.03, 0.515, 0.955) 1.5s infinite; } }
+        line-height: 1.1;
+        animation: floating 8s cubic-bezier(0.455, 0.03, 0.515, 0.955) 1.5s infinite; }
       .home-page .home .home-text .button {
         width: 140px;
         margin: 1em auto; }
