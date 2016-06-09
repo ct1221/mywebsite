@@ -648,7 +648,8 @@ pre {
  * Page content
  */
 .page-content p {
-  font-size: 1.125em; }
+  font-size: 1.125em;
+  line-height: 1.75em; }
 .page-content h1, .page-content h2 {
   font-size: 2.125em;
   font-weight: 100; }
@@ -870,8 +871,10 @@ pre {
           font-size: 36px; } }
       .home-page .home .home-text .page-heading {
         margin-bottom: 0;
-        line-height: 1.1;
-        animation: floating 8s cubic-bezier(0.455, 0.03, 0.515, 0.955) 1.5s infinite; }
+        line-height: 1.1; }
+        @media only screen and (min-width: 800px) {
+          .home-page .home .home-text .page-heading {
+            animation: floating 8s cubic-bezier(0.455, 0.03, 0.515, 0.955) 1.5s infinite; } }
       .home-page .home .home-text .button {
         width: 140px;
         margin: 1em auto; }
@@ -1088,7 +1091,6 @@ section.extra-info {
     section.extra-info .pictures .image {
       width: 17em;
       height: 17em;
-      background-color: #fff;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
@@ -1100,15 +1102,20 @@ section.extra-info {
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
       transition: all 0.3s ease;
-      cursor: pointer; }
+      cursor: pointer;
+      overflow: auto; }
       section.extra-info .pictures .image:hover {
         -webkit-box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
         -moz-box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
-        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3); }
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
+        -webkit-border-radius: 2%;
+        -moz-border-radius: 2%;
+        -ms-border-radius: 2%;
+        border-radius: 2%; }
       section.extra-info .pictures .image:hover + .title, section.extra-info .pictures .image.active + .title {
         opacity: 1;
         z-index: 1;
-        bottom: -4em; }
+        bottom: -3.25em; }
     section.extra-info .pictures .title {
       position: absolute;
       background-color: white;
@@ -1132,13 +1139,7 @@ section.extra-info {
       height: 100vh;
       max-height: 62.5em; }
       section.extra-info .pictures {
-        padding-top: 3.75em; }
-        section.extra-info .pictures .image-container {
-          margin: 0; }
-        section.extra-info .pictures .image:hover + .title, section.extra-info .pictures .image.active + .title {
-          bottom: -1em; }
-        section.extra-info .pictures .title {
-          position: relative; } }
+        padding-top: 3.75em; } }
 
 /* - - - - - PORTFOLIO PAGE - - - - -  */
 section.work-info {
@@ -1200,7 +1201,7 @@ section.work-1 {
           padding-right: 1.875em; } }
     .modal-window .content .content-section {
       padding: 5em 0;
-      border-bottom: 1px solid #0a75c4; }
+      border-bottom: 1px solid #e4edf4; }
       .modal-window .content .content-section ul.expertise {
         float: left;
         list-style-type: none;

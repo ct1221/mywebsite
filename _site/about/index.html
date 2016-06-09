@@ -17,8 +17,19 @@
   <link rel="alternate" type="application/rss+xml" title="My New Jekyll Website" href="http://ct1221.github.io/mywebsite/feed.xml">
 
   <!-- Script -->
-  <script src="/js/zepto.min.js"></script>
-  <script src="/js/celtson-js.js"></script>
+  <!-- <script src="/js/zepto.min.js"></script>
+  <script src="/js/celtson-js.min.js"></script> -->
+  <script>
+    // "hide" class is so that div does not show up on page load.
+    window.onload = function () {
+      popup = document.getElementsByClassName('pop-up');
+      for (i = 0; i < popup.length; i++) {
+        popup[i].classList.add('hide');
+      }
+      document.body.classList.remove('fade-out');
+    }
+  </script>
+
 </head>
 
 
@@ -84,13 +95,11 @@
           <li>Front-End Development</li>
           <li>CMS Management (WordPress)</li>
           <li>UX Development/Design</li>
-          <li>SVN (Github, Cornerstone)</li>
         </ul>
         <ul class="half-col">
-          <li>Design (Photoshop, Illustrator, InDesign)</li>
-          <li>Front-End Development</li>
-          <li>CMS Management (WordPress)</li>
-          <li>UX Development/Design</li>
+          <li>Mobile First Development</li>
+          <li>Responsive Web Development / Design</li>
+          <li>Cross Browser Compatability</li>
           <li>SVN (Github, Cornerstone)</li>
         </ul>
         <div class="hide-on-palm arrow-down">
@@ -112,16 +121,16 @@
       </div>
       <div class="pictures">
         <div class="image-container image-1">
-          <div class="image"></div>
-          <div class="title">Text About Here 1</div>
+          <div class="image"><img alt="Celtson in The Bahamas" src="/img/bahamas.jpg"></div>
+          <div class="title">Yes, I am from the Bahamas :)</div>
         </div>
         <div class="image-container image-2">
-          <div class="image"></div>
-          <div class="title">Text About Here 2 dit sapientem ius, ad mel ani</div>
+          <div class="image"><img alt="Celtson Playing Guitar" src="/img/guitar.jpg"></div>
+          <div class="title">I absolutely LOVE music!</div>
         </div>
         <div class="image-container image-3">
-          <div class="image"></div>
-          <div class="title">Text About Here 3 dit sapientem ius</div>
+          <div class="image"><img alt="Celtson Playing Golf" src="/img/golf.jpg"></div>
+          <div class="title">Not the best at golf, but sports are my go to.</div>
         </div>
       </div>
     </section>
@@ -293,6 +302,18 @@
 </footer>
 
 
+    <script>
+      function downloadJSAtOnload() {
+      var element = document.createElement("script");
+      element.src = "/js/defer.js";
+      document.body.appendChild(element);
+      }
+      if (window.addEventListener)
+      window.addEventListener("load", downloadJSAtOnload, false);
+      else if (window.attachEvent)
+      window.attachEvent("onload", downloadJSAtOnload);
+      else window.onload = downloadJSAtOnload;
+    </script>
   </body>
   <!-- <div class="layover enter"></div> -->
 

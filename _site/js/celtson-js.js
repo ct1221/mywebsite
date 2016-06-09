@@ -1,9 +1,9 @@
 Zepto(function($) {
     // Make page transition smoothly after page load.
 
-    $(window).bind("load", function() {
-        $("body").removeClass('fade-out');
-    })
+    // $(window).bind("load", function() {
+    //     $("body").removeClass('fade-out');
+    // })
 
     // ============= Home Page =============== //
     // =============           =============== //
@@ -14,10 +14,10 @@ Zepto(function($) {
     var verse_popup = $('.pop-up.verse');
     var icons_popup = $('.pop-up.social-icons');
 
-    // Makes sure Zepto adds class, so functoin only works if Zepto exists.
+    // Makes sure Zepto adds class, so function only works if Zepto exists.
     // "hide" class is so that div does not show up on page load.
 
-    $('.pop-up').addClass('hide');
+    // $('.pop-up').addClass('hide');
     $('.pop-up').addClass('active-jq');
 
     // Make sure remove hide class so transition occurs after page load

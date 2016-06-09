@@ -16,6 +16,18 @@
 
     {% include footer.html %}
 
+    <script>
+      function downloadJSAtOnload() {
+      var element = document.createElement("script");
+      element.src = "/js/defer.js";
+      document.body.appendChild(element);
+      }
+      if (window.addEventListener)
+      window.addEventListener("load", downloadJSAtOnload, false);
+      else if (window.attachEvent)
+      window.attachEvent("onload", downloadJSAtOnload);
+      else window.onload = downloadJSAtOnload;
+    </script>
   </body>
   <!-- <div class="layover enter"></div> -->
 

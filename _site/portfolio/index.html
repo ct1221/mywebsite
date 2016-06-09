@@ -17,8 +17,19 @@
   <link rel="alternate" type="application/rss+xml" title="My New Jekyll Website" href="http://ct1221.github.io/mywebsite/feed.xml">
 
   <!-- Script -->
-  <script src="/js/zepto.min.js"></script>
-  <script src="/js/celtson-js.js"></script>
+  <!-- <script src="/js/zepto.min.js"></script>
+  <script src="/js/celtson-js.min.js"></script> -->
+  <script>
+    // "hide" class is so that div does not show up on page load.
+    window.onload = function () {
+      popup = document.getElementsByClassName('pop-up');
+      for (i = 0; i < popup.length; i++) {
+        popup[i].classList.add('hide');
+      }
+      document.body.classList.remove('fade-out');
+    }
+  </script>
+
 </head>
 
 
@@ -238,6 +249,18 @@
 </footer>
 
 
+    <script>
+      function downloadJSAtOnload() {
+      var element = document.createElement("script");
+      element.src = "/js/defer.js";
+      document.body.appendChild(element);
+      }
+      if (window.addEventListener)
+      window.addEventListener("load", downloadJSAtOnload, false);
+      else if (window.attachEvent)
+      window.attachEvent("onload", downloadJSAtOnload);
+      else window.onload = downloadJSAtOnload;
+    </script>
   </body>
   <!-- <div class="layover enter"></div> -->
 

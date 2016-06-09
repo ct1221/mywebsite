@@ -23,7 +23,9 @@
             .page-heading {
                 margin-bottom: 0;
                 line-height: 1.1;
-                animation: floating 8s $ease-in-out-quad 1.5s infinite;
+                @include min-media-query($on-ipad) {
+                  animation: floating 8s $ease-in-out-quad 1.5s infinite;
+                }
             }
             .button {
                 width: 140px;
@@ -251,19 +253,21 @@ section.extra-info {
         .image {
             width: 17em;
             height: 17em;
-            background-color: $white;
+            // background-color: $white;
             @include border-radius(50%);
             margin: 0 auto;
             @include box-shadow(0 2px 15px -4px rgba(0, 0, 0, 0.3));
             @include transition-easy(0.3s);
             cursor: pointer;
+            overflow: auto;
             &:hover {
                 @include box-shadow(0 4px 20px -2px rgba(0, 0, 0, 0.3));
+                @include border-radius(2%);
             }
             &:hover + .title, &.active + .title {
                 opacity: 1;
                 z-index: 1;
-                bottom: -4em;
+                bottom: -3.25em;
             }
         }
         .title {
@@ -287,17 +291,6 @@ section.extra-info {
         max-height: em(1000);
         .pictures {
             padding-top: $spacing-unit * 2;
-            .image-container {
-                margin: 0;
-            }
-            .image {
-                &:hover + .title, &.active + .title {
-                    bottom: -1em;
-                }
-            }
-            .title {
-                position: relative;
-            }
         }
     }
 }
@@ -361,7 +354,7 @@ section.work-1 {
       }
       .content-section {
         padding: 5em 0;
-        border-bottom: 1px solid $primary-color-dark;
+        border-bottom: 1px solid $text-color-light;
         ul.expertise {
           float: left;
           list-style-type: none;
