@@ -1,9 +1,5 @@
+// My JS
 Zepto(function($) {
-    // Make page transition smoothly after page load.
-
-    // $(window).bind("load", function() {
-    //     $("body").removeClass('fade-out');
-    // })
 
     // ============= Home Page =============== //
     // =============           =============== //
@@ -116,7 +112,74 @@ Zepto(function($) {
         }
     })
 
-    // Resume Modal Code
+    // ============= Portfolio Page =============== //
+    // =============                =============== //
+    var currentIndex = 1;
+    var portfolio_amount = $('.portfolio-image').length;
+    var dots = $('.dots').children();
+    console.log(dots);
+
+    $('.prev').click(function(e) {
+      e.preventDefault();
+      currentIndex -= 1;
+      if (currentIndex < 1) {
+        currentIndex = portfolio_amount;
+      }
+      // Add color to active dot
+      $('.dots .fa').removeClass('fa-active');
+      $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
+      // Change portfolio image
+      $('.portfolio-image').removeClass('show-item');
+      $('.portfolio-' + currentIndex).addClass('show-item');
+    });
+
+    // Mobile Swipe Left for Portfolio
+    $('.portfolio-slider').swipeLeft(function(){
+      currentIndex -= 1;
+      if (currentIndex < 1) {
+        currentIndex = portfolio_amount;
+      }
+      // Add color to active dot
+      $('.dots .fa').removeClass('fa-active');
+      $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
+      // Change portfolio image
+      $('.portfolio-image').removeClass('show-item');
+      $('.portfolio-' + currentIndex).addClass('show-item');
+    })
+
+    $('.next').click(function(e) {
+      e.preventDefault();
+      currentIndex += 1;
+      if (currentIndex > portfolio_amount) {
+        currentIndex = 1;
+      }
+      // Add color to active dot
+      $('.dots .fa').removeClass('fa-active');
+      $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
+      
+      // Change portfolio image
+      $('.portfolio-image').removeClass('show-item');
+      $('.portfolio-' + currentIndex).addClass('show-item');
+    });
+
+    // Mobile Swipe Right for Portfolio
+    $('.portfolio-slider').swipeRight(function(){
+      currentIndex += 1;
+      if (currentIndex > portfolio_amount) {
+        currentIndex = 1;
+      }
+      // Add color to active dot
+      $('.dots .fa').removeClass('fa-active');
+      $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
+
+      // Change portfolio image
+      $('.portfolio-image').removeClass('show-item');
+      $('.portfolio-' + currentIndex).addClass('show-item');
+    })
+
+
+    // ================= Resume Modal ============== //
+    // =================              ============== //
 
     //select all the a tag with name equal to modal
     $('a[name=resume-modal]').click(function(e) {

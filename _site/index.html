@@ -11,19 +11,19 @@
 ">
 
   <link href="/css/main.css" rel="stylesheet" >
-  <!-- <link rel="stylesheet" href="https://use.typekit.net/c/8e4394/1w;adelle,2,XJr:W:i1,XKB:W:i4,XKG:W:i7,XJq:W:n1,XK9:W:n4,XKF:W:n7;proxima-nova,2,gbh:W:i1,gbm:W:i4,gbt:W:i7,gbg:W:n1,gbl:W:n4,gbs:W:n7/d" media="all"> -->
   <!-- <link href="//fonts.googleapis.com/css?family=Roboto+Slab:300,400,500&amp;lang=en" rel="stylesheet"> -->
   <link rel="canonical" href="http://ct1221.github.io/mywebsite/">
   <link rel="alternate" type="application/rss+xml" title="My New Jekyll Website" href="http://ct1221.github.io/mywebsite/feed.xml">
 
   <!-- Script -->
   <script>
-    // "hide" class is so that div does not show up on page load.
     window.onload = function () {
+      // "hide" class is so that div does not show up on page load.
       popup = document.getElementsByClassName('pop-up');
       for (i = 0; i < popup.length; i++) {
         popup[i].classList.add('hide');
       }
+      // Make page transition smoothly after page load.
       document.body.classList.remove('fade-out');
     }
   </script>
@@ -51,7 +51,7 @@
 
           <div class="trigger">
             
-                     
+                       
               <a class="page-link" href="/about/">About Me</a>   
               <a class="page-link" href="/portfolio/">Portfolio</a>  
               <a class="page-link" href="#resume-modal" name="resume-modal">Resume</a>

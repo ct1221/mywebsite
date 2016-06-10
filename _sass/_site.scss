@@ -115,7 +115,9 @@
                 color: $white;
                 background-color: $accent-color;
             }
-            @include min-media-query($on-ipad) { padding: 0.4em 0.95em; }
+            @include min-media-query($on-ipad) {
+                padding: 0.4em 0.95em;
+            }
         }
         &.hide {
             display: none;
@@ -154,19 +156,11 @@ section.about-intro {
         color: $text-color-dark;
         margin-left: auto;
         .button {
-            color: $white;
-            font-size: $base-font-size;
             display: inline-block;
-            font-weight: normal;
             margin: em(5) 0;
-            &.resume {
-                background-color: $accent-color-2;
-            }
             &.contact {
-                background-color: $accent-color;
                 margin-right: $body;
             }
-            &:hover { @include transform(scale(1.1)); }
         }
     }
     @include min-media-query($on-ipad) {
@@ -216,12 +210,12 @@ section.expertise {
             color: $accent-color;
         }
         .fa-stack {
-           animation: bounce 2s 5s 5;
-         &:hover {
-           animation: none;
-           text-shadow: 0 4px 3px rgba(0,0,0,0.2), 0 8px 13px rgba(0,0,0,0.07), 0 18px 23px rgba(0,0,0,0.07);
-         }
-       }
+            animation: bounce 2s 5s 5;
+            &:hover {
+                animation: none;
+                text-shadow: 0 4px 3px rgba(0,0,0,0.2), 0 8px 13px rgba(0,0,0,0.07), 0 18px 23px rgba(0,0,0,0.07);
+            }
+        }
     }
 }
 section.extra-info {
@@ -244,8 +238,7 @@ section.extra-info {
             position: relative;
             text-align: center;
             display: inline-block;
-            margin: 0 1em;
-            margin-bottom: $spacing-unit;
+            margin: 0 1em $spacing-unit;
             @include transition-easy(0.3s);
         }
         .image {
@@ -262,7 +255,8 @@ section.extra-info {
                 @include box-shadow(0 4px 20px -2px rgba(0, 0, 0, 0.3));
                 @include border-radius(2%);
             }
-            &:hover + .title, &.active + .title {
+            &.active + .title,
+            &:hover + .title {
                 opacity: 1;
                 z-index: 1;
                 bottom: -3.25em;
@@ -292,117 +286,221 @@ section.extra-info {
         }
     }
 }
-
 /* - - - - - PORTFOLIO PAGE - - - - -  */
-section.work-info {
-  padding: $spacing-unit * 2 0;
-  color: $text-color-dark;
+section.portfolio-info {
+    padding: $spacing-unit * 2 0;
+    color: $text-color-dark;
+    text-align: center;
+}
+section.portfolio {
+    background-color: $white;
+    position: relative;
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 4%;
+        width: 6em;
+        opacity: 0;
+        @include min-media-query($on-ipad) {
+          opacity: 1;
+        }
+        @include max-media-query($on-palm) {
+          display: none;
+        }
+        @include transition-easy(0.3s);
+        &:hover {
+            right: 3.5%;
+        }
+        .fa {
+            color: $accent-color;
+            border: 2px solid $accent-color;
+            padding: 2px 16px 2px 20px;
+            @include border-radius(50%);
+            &:hover {
+                background-color: $accent-color;
+                color: $white;
+            }
+        }
+        &.prev {
+            left: 4%;
+            &:hover {
+                left: 3.5%;
+            }
+            @extend .arrow;
+            .fa {
+                padding: 2px 20px 2px 16px;
+            }
+        }
+    }
+    &:hover .arrow {
+        opacity: 1;
+    }
+}
+.portfolio-slider {
+    text-align: center;
+    padding: $spacing-unit * 2 $spacing-unit;
+    &.wrapper {
+        @include min-media-query($on-laptop) {
+            max-width: calc(1280px - (1.875em * 2));
+        }
+    }
+    .portfolio-image {
+        display: none;
+        position: relative;
+        &.show-item {
+            display: block;
+        }
+        .desktop-image {
+            padding-right: $spacing-unit;
+            img {
+                @include box-shadow(0px 6px 25px 0px rgba(0, 0, 0, 0.3));
+            }
+            @include min-media-query($on-palm) {
+                padding-right: $spacing-unit * 2.5;
+            }
+            @include min-media-query($on-ipad) {
+                padding-right: $spacing-unit * 4;
+            }
+        }
+        .mobile-image {
+            @include box-shadow(0px 6px 25px 0px rgba(0, 0, 0, 0.3));
+            position: absolute;
+            bottom: -2em;
+            right: 0;
+            width: 8em;
+            max-height: 15em;
+            overflow: auto;
+            @include min-media-query ($on-palm) {
+                bottom: 1.5em;
+                font-size: 26px;
+            }
+            @include min-media-query ($on-ipad) {
+                font-size: 32px;
+            }
+            @include min-media-query ($on-laptop) {
+                font-size: 46px;
+            }
+        }
+    }
+}
+.dots {
   text-align: center;
+  .fa {
+    color: $text-color-light;
+  }
 }
-section.work-1 {
-  background-color: $white;
+.portfolio-footer {
+    padding-bottom: $spacing-unit;
+    .button {
+        float: right;
+    }
+    &.wrapper {
+        @include min-media-query($on-laptop) {
+            max-width: calc(1280px - (1.875em * 2));
+        }
+    }
 }
-
 /* - - - - - RESUME TEMPLATE - - - - -  */
-
 .modal-window {
-    position:fixed;
-    opacity: 0; /* Hides the modal window by default */
+    position: fixed;
+    opacity: 0;
+    /* Hides the modal window by default */
     z-index: 2;
-    width:100%;
+    width: 100%;
     height: 100vh;
     background: #fff;
     top: 0;
     left: -9999px;
     max-width: 1200px;
-    margin: 0px auto;
+    margin: 0 auto;
     @include transition(all 0.4s $ease-in-out-back);
     .resume-header {
-      background-color: $text-color-dark2;
-      color: $white;
-      position: relative;
-      .site-title{
-        padding: 0 5%;
-        line-height: 2.5em;
-      }
-      a.close-resume {
-        position: absolute;
-        top: 40px;
-        right: 5%;
-        @include transition-easy(0.3s);
-        &:hover {
-          @include transform(rotate(180deg));
+        background-color: $text-color-dark2;
+        color: $white;
+        position: relative;
+        .site-title {
+            padding: 0 5%;
+            line-height: 2.5em;
         }
-      }
+        a.close-resume {
+            position: absolute;
+            top: 40px;
+            right: 5%;
+            @include transition-easy(0.3s);
+            &:hover {
+                @include transform(rotate(180deg));
+            }
+        }
     }
     .content {
-      overflow: auto;
-      height: calc(100% - 232px);
-      padding: 0 5%;
-      color: $grey-color-dark;
-      h2 {
-        color: $text-color-dark2;
-        font-weight: $light-font-weight;
-        font-size: em(20);
-        text-transform: uppercase;
-        @include min-media-query($on-palm) {
-          text-align: right;
-          padding-right: $spacing-unit;
-        }
-      }
-      .content-section {
-        padding: 5em 0;
-        border-bottom: 1px solid $text-color-light;
-        ul.expertise {
-          float: left;
-          list-style-type: none;
-          width: 50%;
-          padding: 0;
-          li:first-of-type {
+        overflow: auto;
+        height: calc(100% - 232px);
+        padding: 0 5%;
+        color: $grey-color-dark;
+        h2 {
+            color: $text-color-dark2;
+            font-weight: $light-font-weight;
             font-size: em(20);
-            font-weight: normal;
-            margin-bottom: em(8);
-          }
+            text-transform: uppercase;
+            @include min-media-query($on-palm) {
+                text-align: right;
+                padding-right: $spacing-unit;
+            }
         }
-        .experiences {
-          h3 {
-            margin: 0;
-          }
-          span {
-            font-size: em(18);
-          }
-          ul { list-style-image: url("/img/bullet.gif"); }
+        .content-section {
+            padding: 5em 0;
+            border-bottom: 1px solid $text-color-light;
+            ul.expertise {
+                float: left;
+                list-style-type: none;
+                width: 50%;
+                padding: 0;
+                li:first-of-type {
+                    font-size: em(20);
+                    font-weight: normal;
+                    margin-bottom: em(8);
+                }
+            }
+            .experiences {
+                h3 {
+                    margin: 0;
+                }
+                span {
+                    font-size: em(18);
+                }
+                ul {
+                    list-style-image: url("/img/bullet.gif");
+                }
+            }
+            &:last-of-type {
+                border: none;
+            }
+            &::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
         }
-        &:last-of-type {
-          border: none;
-        }
-        &::after {
-          content: "";
-          display: table;
-          clear: both;
-        }
-      }
     }
     .resume-footer {
-      background-color: $text-color-dark2;
-      padding: 2.2em;
-      .button {
-        width: 200px;
-        margin: 0 auto;
-        &:hover {
-          color: $text-color-dark2;
-          background-color: $white;
+        background-color: $text-color-dark2;
+        padding: 2.2em;
+        .button {
+            width: 200px;
+            margin: 0 auto;
+            &:hover {
+                color: $text-color-dark2;
+                background-color: $white;
+            }
         }
-      }
     }
 }
-
 .modal-show {
-  opacity: 1;
-  left: 50%;
-  transform: translateX(-50%);
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
 }
-
 .modal-cover {
     background-color: black;
     opacity: 0;
@@ -413,7 +511,7 @@ section.work-1 {
     top: 0;
     @include transition-easy(0.3s);
     &.modal-background {
-      opacity: 0.5;
-      z-index: 1;
+        opacity: 0.5;
+        z-index: 1;
     }
 }

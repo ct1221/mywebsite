@@ -97,7 +97,7 @@
         line-height: $base-line-height * 1.33;
         display: block;
         cursor: pointer;
-        font-size: $body;
+        font-size: em(20);
         border-bottom: 1px solid transparent;
         border-top: 1px solid transparent;
         @include transition-easy(0.3s);
@@ -106,9 +106,6 @@
             border-bottom: 1px solid $white;
             border-top: 1px solid $white;
             text-indent: em(20);
-        }
-        @include min-media-query($on-palm) {
-            font-size: 20px;
         }
     }
     @include max-media-query($on-palm) {
