@@ -27,7 +27,6 @@
       document.body.classList.remove('fade-out');
     }
   </script>
-
 </head>
 
 
@@ -35,7 +34,9 @@
     <!-- For the opacity fade-in on page load -->
     <script>document.body.className += 'fade-out';</script>
 
-    <header class="site-header">
+    <div id="barba-wrapper">
+      <div class="barba-container">
+        <header class="site-header">
 
     <div class="title-wrapper">
         <a class="site-title">About Me</a>
@@ -61,7 +62,7 @@
                     
             <a class="page-link" href="/">Home</a>     
             <a class="page-link" href="/portfolio/">Portfolio</a>  
-            <a class="page-link" href="#resume-modal" name="resume-modal">Resume</a>
+            <a class="page-link" href="#" name="resume-modal">Resume</a>
             <a class="page-link" href="https://medium.com/@celtsontoote">Blog</a>
         </div>
     </nav>
@@ -69,8 +70,8 @@
 </header>
 
 
-    <div class="page-content">
-      <article class="post">
+        <div class="page-content">
+          <article class="post">
 
     <section class="about-intro">
       <div class="wrapper">
@@ -79,7 +80,7 @@
           <p>Lorem ipsum dolor sit amet, eu impedit sapientem ius, ad mel animal honestatis, id vis minim viris. Ut aliquando temporibus ius, nec an ludus definitionem, nam in aperiam corrumpit philosophia. Ullum torquatos id vim, has at tritani vocibus.</p>
           <div class="button-group">
             <div class="button accent contact">Contact Me</div>
-            <a href="#resume-modal" name="resume-modal"><div class="button accent-2">Resume</div></a>
+            <a href="#" name="resume-modal"><div class="button accent-2">Resume</div></a>
           </div>
         </div>
       </div>
@@ -134,8 +135,8 @@
     </section>
 </article>
 
-    </div>
-    <section class="resume-section modal-window">
+        </div>
+        <section class="resume-section modal-window">
   <div class="resume-header">
     <h1 class="site-title">My Resume</h1>
     <a href="#" class="close-resume"><img src="/img/resume-close.png"></a>
@@ -226,7 +227,7 @@
 <div class="modal-cover"></div>
 
 
-    <footer class="site-footer">
+        <footer class="site-footer">
 
   <div class="wrapper">
 
@@ -299,6 +300,8 @@
 
 </footer>
 
+      </div>
+    </div>
 
     <script>
       function downloadJSAtOnload() {
@@ -313,6 +316,5 @@
       else window.onload = downloadJSAtOnload;
     </script>
   </body>
-  <!-- <div class="layover enter"></div> -->
 
 </html>

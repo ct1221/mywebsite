@@ -27,15 +27,18 @@
       document.body.classList.remove('fade-out');
     }
   </script>
-
 </head>
 
 
 <body class="home-page">
-  <!-- For the opacity fade-in on page load -->
-  <script>document.body.className += ' fade-out';</script>
+    <!-- For the opacity fade-in on page load -->
+    <script>
+        document.body.className += ' fade-out';
+    </script>
 
-  <section class="home">
+    <div id="barba-wrapper">
+        <div class="barba-container">
+            <section class="home">
 
   <header>
       <nav class="site-nav">
@@ -54,7 +57,7 @@
                        
               <a class="page-link" href="/about/">About Me</a>   
               <a class="page-link" href="/portfolio/">Portfolio</a>  
-              <a class="page-link" href="#resume-modal" name="resume-modal">Resume</a>
+              <a class="page-link" href="#" name="resume-modal">Resume</a>
               <a class="page-link" href="https://medium.com/@celtsontoote">Blog</a>
           </div>
       </nav>
@@ -132,7 +135,7 @@
     </div>
   </div>
 
-  <footer>
+  <footer class="home-footer">
     <div class="verse-button transparent button">Verse</div>
     <div class="social-button transparent button">Find Me</div>
   </footer>
@@ -230,19 +233,22 @@
 <div class="modal-cover"></div>
 
 
+        </div>
+    </div>
 
-  <script>
-    function downloadJSAtOnload() {
-    var element = document.createElement("script");
-    element.src = "/js/defer.js";
-    document.body.appendChild(element);
-    }
-    if (window.addEventListener)
-    window.addEventListener("load", downloadJSAtOnload, false);
-    else if (window.attachEvent)
-    window.attachEvent("onload", downloadJSAtOnload);
-    else window.onload = downloadJSAtOnload;
-  </script>
+    <script>
+        function downloadJSAtOnload() {
+            var element = document.createElement("script");
+            element.src = "/js/defer.js";
+            document.body.appendChild(element);
+        }
+
+        if (window.addEventListener)
+            window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+            window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+    </script>
 </body>
 
 </html>

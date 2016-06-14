@@ -4,23 +4,30 @@
 {% include head.html %}
 
 <body class="home-page">
-  <!-- For the opacity fade-in on page load -->
-  <script>document.body.className += ' fade-out';</script>
+    <!-- For the opacity fade-in on page load -->
+    <script>
+        document.body.className += ' fade-out';
+    </script>
 
-  {{ content }}
+    <div id="barba-wrapper">
+        <div class="barba-container">
+            {{ content }}
+        </div>
+    </div>
 
-  <script>
-    function downloadJSAtOnload() {
-    var element = document.createElement("script");
-    element.src = "/js/defer.js";
-    document.body.appendChild(element);
-    }
-    if (window.addEventListener)
-    window.addEventListener("load", downloadJSAtOnload, false);
-    else if (window.attachEvent)
-    window.attachEvent("onload", downloadJSAtOnload);
-    else window.onload = downloadJSAtOnload;
-  </script>
+    <script>
+        function downloadJSAtOnload() {
+            var element = document.createElement("script");
+            element.src = "/js/defer.js";
+            document.body.appendChild(element);
+        }
+
+        if (window.addEventListener)
+            window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+            window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+    </script>
 </body>
 
 </html>

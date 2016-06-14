@@ -7,14 +7,18 @@
     <!-- For the opacity fade-in on page load -->
     <script>document.body.className += 'fade-out';</script>
 
-    {% include header.html %}
+    <div id="barba-wrapper">
+      <div class="barba-container">
+        {% include header.html %}
 
-    <div class="page-content">
-      {{ content }}
+        <div class="page-content">
+          {{ content }}
+        </div>
+        {% include resume.html %}
+
+        {% include footer.html %}
+      </div>
     </div>
-    {% include resume.html %}
-
-    {% include footer.html %}
 
     <script>
       function downloadJSAtOnload() {
@@ -29,6 +33,5 @@
       else window.onload = downloadJSAtOnload;
     </script>
   </body>
-  <!-- <div class="layover enter"></div> -->
 
 </html>

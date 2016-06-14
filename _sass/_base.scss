@@ -34,7 +34,7 @@ ul {
 body {
     font: $base-font-weight $base-size+px $base-font-family;
     color: $text-color-light;
-    background-color: $background-color;
+    background-color: $primary-color;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -o-font-feature-settings: "kern" 1;
@@ -217,6 +217,12 @@ pre {
         float: left;
     }
 }
+.col-1-3 {
+  @include min-media-query($on-palm) {
+      width: 33.33333%;
+      float: left;
+  }
+}
 .col-1-4 {
   @include min-media-query($on-palm) {
       width: 30%;
@@ -292,6 +298,7 @@ pre {
         display: none !important;
     }
 }
+
 /**
  * Layover
  */

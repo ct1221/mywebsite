@@ -117,66 +117,65 @@ Zepto(function($) {
     var currentIndex = 1;
     var portfolio_amount = $('.portfolio-image').length;
     var dots = $('.dots').children();
-    console.log(dots);
 
+    // Previous Function
+    function prevSlide () {
+      currentIndex -= 1;
+      if (currentIndex < 1) {
+        currentIndex = portfolio_amount;
+      }
+      // Add color to active dot
+      $('.dots .fa').removeClass('fa-active');
+      $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
+      // Change portfolio image
+      $('.portfolio-image').removeClass('show-item');
+      $('.portfolio-' + currentIndex).addClass('show-item');
+    }
+
+    // Next Function
+    function nextSlide () {
+      currentIndex += 1;
+      if (currentIndex > portfolio_amount) {
+        currentIndex = 1;
+      }
+      // Add color to active dot
+      $('.dots .fa').removeClass('fa-active');
+      $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
+      // Change portfolio image
+      $('.portfolio-image').removeClass('show-item');
+      $('.portfolio-' + currentIndex).addClass('show-item');
+    }
+
+    // Previous Click
     $('.prev').click(function(e) {
       e.preventDefault();
-      currentIndex -= 1;
-      if (currentIndex < 1) {
-        currentIndex = portfolio_amount;
-      }
-      // Add color to active dot
-      $('.dots .fa').removeClass('fa-active');
-      $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
-      // Change portfolio image
-      $('.portfolio-image').removeClass('show-item');
-      $('.portfolio-' + currentIndex).addClass('show-item');
+      prevSlide();
     });
 
-    // Mobile Swipe Left for Portfolio
+    // Mobile Swipe Left
     $('.portfolio-slider').swipeLeft(function(){
-      currentIndex -= 1;
-      if (currentIndex < 1) {
-        currentIndex = portfolio_amount;
-      }
-      // Add color to active dot
-      $('.dots .fa').removeClass('fa-active');
-      $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
-      // Change portfolio image
-      $('.portfolio-image').removeClass('show-item');
-      $('.portfolio-' + currentIndex).addClass('show-item');
+      prevSlide();
     })
 
+    // Next Click
     $('.next').click(function(e) {
       e.preventDefault();
-      currentIndex += 1;
-      if (currentIndex > portfolio_amount) {
-        currentIndex = 1;
-      }
-      // Add color to active dot
-      $('.dots .fa').removeClass('fa-active');
-      $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
-      
-      // Change portfolio image
-      $('.portfolio-image').removeClass('show-item');
-      $('.portfolio-' + currentIndex).addClass('show-item');
+      nextSlide();
     });
 
-    // Mobile Swipe Right for Portfolio
+    // Mobile Swipe Right
     $('.portfolio-slider').swipeRight(function(){
-      currentIndex += 1;
-      if (currentIndex > portfolio_amount) {
-        currentIndex = 1;
-      }
-      // Add color to active dot
-      $('.dots .fa').removeClass('fa-active');
-      $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
-
-      // Change portfolio image
-      $('.portfolio-image').removeClass('show-item');
-      $('.portfolio-' + currentIndex).addClass('show-item');
+      nextSlide();
     })
 
+    // Use dots to automatically go to a slide-down
+    $('.dots .fa-stack').on('click touchmove', function() {
+      var dot_number = $(this)[0].dataset.number;
+      $('.portfolio-image').removeClass('show-item');
+      $('.portfolio-' + dot_number).addClass('show-item');
+      $('.dots .fa').removeClass('fa-active');
+      $(dots[dot_number - 1].firstElementChild).addClass('fa-active');
+    });
 
     // ================= Resume Modal ============== //
     // =================              ============== //
