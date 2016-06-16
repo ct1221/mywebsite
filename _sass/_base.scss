@@ -240,11 +240,12 @@ pre {
 .button {
     padding: 0.5em 1.25em;
     text-align: center;
-    min-width: 125px;
+    min-width: 132px;
     cursor: pointer;
     font-size: em(20);
     position: relative;
     line-height: 1.5rem;
+    display: block;
     @include transition-easy(0.3s);
     &.transparent {
         border: 1px solid $white;
