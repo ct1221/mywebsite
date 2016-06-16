@@ -38,7 +38,6 @@ Zepto(function($) {
     })
 
     // Touch Move event is so that it works on first click for Safari in iPhones/iPads.
-
     verse_button.on('click touchmove', function(e) {
         // Hide the icon's pop up if they are open
         icons_popup.addClass('active-jq');
@@ -58,7 +57,6 @@ Zepto(function($) {
         icons_popup.toggleClass('active-jq');
         $(this).toggleClass('active');
     })
-
 
     // ============= About Page =============== //
     // =============           =============== //
@@ -118,7 +116,7 @@ Zepto(function($) {
     // ============= Portfolio Page =============== //
     // =============                =============== //
     var currentIndex = 1;
-    var portfolio_amount = $('.portfolio-image').length;
+    var portfolio_amount = $('.portfolio-items').length;
     var dots = $('.dots').children();
 
     // Previous Function
@@ -131,9 +129,11 @@ Zepto(function($) {
       $('.dots .fa').removeClass('fa-active');
       $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
       // Change portfolio image
-      $('.portfolio-image').removeClass('show-item');
+      $('.portfolio-items').removeClass('show-item');
       $('.portfolio-' + currentIndex).addClass('show-item');
-
+      // Add transition to mobile image
+      $('.mobile-image').removeClass('show-item');
+      $('.portfolio-' + currentIndex + ' .mobile-image').addClass('show-item');
     }
 
     // Next Function
@@ -146,8 +146,11 @@ Zepto(function($) {
       $('.dots .fa').removeClass('fa-active');
       $(dots[currentIndex - 1].firstElementChild).addClass('fa-active');
       // Change portfolio image
-      $('.portfolio-image').removeClass('show-item');
+      $('.portfolio-items').removeClass('show-item');
       $('.portfolio-' + currentIndex).addClass('show-item');
+      // Add transition to mobile image
+      $('.mobile-image').removeClass('show-item');
+      $('.portfolio-' + currentIndex + ' .mobile-image').addClass('show-item');
     }
 
     // Previous Click
@@ -172,12 +175,15 @@ Zepto(function($) {
       nextSlide();
     })
 
-
     // Use dots to automatically go to a slide-down
     $('.dots .fa-stack').on('click touchmove', function() {
       var dot_number = $(this)[0].dataset.number;
-      $('.portfolio-image').removeClass('show-item');
+      $('.portfolio-items').removeClass('show-item');
       $('.portfolio-' + dot_number).addClass('show-item');
+
+      $('.mobile-image').removeClass('show-item');
+      $('.portfolio-' + dot_number + ' .mobile-image').addClass('show-item');
+
       $('.dots .fa').removeClass('fa-active');
       $(dots[dot_number - 1].firstElementChild).addClass('fa-active');
     });

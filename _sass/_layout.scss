@@ -212,7 +212,7 @@
     font-size: em(20);
     &.second-line {
         font-size: $base-font-size * 2.5;
-        text-shadow: 0 4px 3px rgba(0, 0, 0, 0.03), 0 8px 13px rgba(0, 0, 0, 0.03), 0 8px 0px rgba(0, 0, 0, 0.03);;
+        text-shadow: 0 4px 3px rgba(0, 0, 0, 0.03), 0 8px 13px rgba(0, 0, 0, 0.03), 0 4px 0px rgba(0, 0, 0, 0.03);;
     }
 }
 .post-list {
