@@ -298,6 +298,7 @@ section.extra-info {
             font-size: em(18);
             max-width: em(300);
             width: 100%;
+            z-index: 1;
         }
     }
     @include min-media-query($on-laptop) {

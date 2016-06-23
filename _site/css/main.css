@@ -1195,7 +1195,8 @@ section.extra-info {
       transition: all 0.3s ease;
       font-size: 1.125em;
       max-width: 18.75em;
-      width: 100%; }
+      width: 100%;
+      z-index: 1; }
   @media only screen and (min-width: 1224px) {
     section.extra-info {
       padding: 6.09375em 0;
