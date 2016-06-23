@@ -44,10 +44,10 @@
             // animation: floating 8s $ease-in-out-quad 1.5s infinite;
         }
         .button {
-            width: 140px;
+            width: 150px;
             margin: $spacing-unit auto;
             @include min-media-query($on-ipad) {
-                width: 190px;
+                width: 200px;
             }
             &:hover {
                 color: $primary-color;
@@ -684,7 +684,7 @@ section.portfolio-items {
         background-color: $text-color-dark2;
         padding: 2.2em;
         .button {
-            width: 200px;
+            width: 210px;
             margin: 0 auto;
             &:hover {
                 color: $text-color-dark2;

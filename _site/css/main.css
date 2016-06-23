@@ -945,11 +945,11 @@ pre {
       line-height: 1.1;
       font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif; }
     .home .home-text .button {
-      width: 140px;
+      width: 150px;
       margin: 1.875em auto; }
       @media only screen and (min-width: 800px) {
         .home .home-text .button {
-          width: 190px; } }
+          width: 200px; } }
       .home .home-text .button:hover {
         color: #12a6fb; }
         .home .home-text .button:hover::after {
@@ -1562,7 +1562,7 @@ section.portfolio-items {
     background-color: #416277;
     padding: 2.2em; }
     .modal-window .resume-footer .button {
-      width: 200px;
+      width: 210px;
       margin: 0 auto; }
       .modal-window .resume-footer .button:hover {
         color: #416277;
