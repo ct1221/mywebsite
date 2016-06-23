@@ -1510,6 +1510,7 @@ section.portfolio-items {
       position: absolute;
       top: 40px;
       right: 5%;
+      max-width: 40px;
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
       transition: all 0.3s ease; }

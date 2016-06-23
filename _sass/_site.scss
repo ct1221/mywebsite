@@ -623,6 +623,7 @@ section.portfolio-items {
             position: absolute;
             top: 40px;
             right: 5%;
+            max-width: 40px;
             @include transition-easy(0.3s);
             &:hover {
                 @include transform(rotate(180deg));
