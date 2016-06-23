@@ -6,15 +6,22 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: My New Jekyll Website
+title: Celtson Toote's Personal Website
 email: celtson.011@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   This is Celtson Toote's personal website portfolio. Here I have
   information about myself, and samples of some of my current work.
-  These work range from website design to web devlopment. 
+  These work range from website design to web devlopment.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://ct1221.github.io/mywebsite" # the base hostname & protocol for your site
+url: "http://celtson.com" # the base hostname & protocol for your site
 github_username:  ct1221
 
 # Build settings
 markdown: kramdown
+
+# Google services
+google_analytics: UA-58112357-2
+
+# Social SEO Tags
+gems:
+  - jekyll-seo-tag

@@ -700,12 +700,15 @@ pre {
 /**
  * Page content
  */
-.page-content p {
-  font-size: 1.125em;
-  line-height: 1.75em; }
-.page-content h1, .page-content h2 {
-  font-size: 2em;
-  font-weight: 100; }
+.page-content {
+  position: relative;
+  z-index: 0; }
+  .page-content p {
+    font-size: 1.125em;
+    line-height: 1.75em; }
+  .page-content h1, .page-content h2 {
+    font-size: 2em;
+    font-weight: 100; }
 
 .page-heading {
   font-size: 1.25em; }
@@ -941,8 +944,7 @@ pre {
     .home .home-text .page-heading {
       margin-bottom: 0;
       line-height: 1.1;
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-      animation: floating 8s cubic-bezier(0.455, 0.03, 0.515, 0.955) 1.5s infinite; }
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif; }
     .home .home-text .button {
       width: 140px;
       margin: 1.875em auto; }
@@ -1090,7 +1092,7 @@ section.about-intro {
           background: url("/img/about/me.png") top center/cover no-repeat;
           height: 520px;
           position: absolute;
-          bottom: -5.45em;
+          bottom: -5.5em;
           left: -7.5em;
           width: 430px;
           z-index: 1; }

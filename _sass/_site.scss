@@ -41,7 +41,7 @@
             margin-bottom: 0;
             line-height: 1.1;
             font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-            animation: floating 8s $ease-in-out-quad 1.5s infinite;
+            // animation: floating 8s $ease-in-out-quad 1.5s infinite;
         }
         .button {
             width: 140px;
@@ -196,7 +196,7 @@ section.about-intro {
                 background: url('/img/about/me.png') top center/cover no-repeat;
                 height: 520px;
                 position: absolute;
-                bottom: -5.45em;
+                bottom: -5.5em;
                 left: -7.5em;
                 width: 430px;
                 z-index: 1;
