@@ -29,10 +29,14 @@ ul {
     padding: 0;
 }
 /**
+ * Scrollbar
+ */
+
+/**
  * Basic styling
  */
 body {
-    font: $base-font-weight $base-size+px $base-font-family;
+    font: $light-font-weight $base-size+px $base-font-family;
     color: $text-color-light;
     background-color: $primary-color;
     -webkit-text-size-adjust: 100%;
@@ -74,7 +78,9 @@ ul {
  * Images
  */
 img {
+    width: 100%;
     max-width: 100%;
+    height: auto;
     vertical-align: middle;
 }
 /**

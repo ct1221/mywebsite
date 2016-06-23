@@ -83,10 +83,13 @@ ul {
   padding: 0; }
 
 /**
+ * Scrollbar
+ */
+/**
  * Basic styling
  */
 body {
-  font: 400 16px "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font: 100 16px "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   color: #e4edf4;
   background-color: #12a6fb;
   -webkit-text-size-adjust: 100%;
@@ -131,7 +134,9 @@ ul {
  * Images
  */
 img {
+  width: 100%;
   max-width: 100%;
+  height: auto;
   vertical-align: middle; }
 
 /**
@@ -652,12 +657,16 @@ pre {
 .footer-col-1,
 .footer-col-2 {
   width: -webkit-calc(50% - (1.875em / 2));
-  width: calc(50% - (1.875em / 2)); }
+  width: calc(50% - (1.875em / 2));
+  max-width: 150px; }
 
 .footer-col-3,
 .footer-col-4 {
   width: -webkit-calc(100% - (1.875em / 2));
   width: calc(100% - (1.875em / 2)); }
+  .footer-col-3 h2,
+  .footer-col-4 h2 {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif; }
 
 @media only screen and (min-width: 800px) {
   .footer-col {
@@ -673,7 +682,13 @@ pre {
 
   .footer-col-2 {
     width: -webkit-calc(20% - (1.875em / 2));
-    width: calc(20% - (1.875em / 2)); }
+    width: calc(20% - (1.875em / 2));
+    margin-top: 0.625em;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .footer-col-2:hover {
+      margin: 0; }
 
   .footer-col-3 {
     width: -webkit-calc(45% - (1.875em / 2));
@@ -918,15 +933,19 @@ pre {
     vertical-align: middle; }
     @media only screen and (min-width: 800px) {
       .home .home-text {
-        font-size: 36px;
+        font-size: 34px;
         animation: slide-down 1.5s ease forwards; } }
+    @media only screen and (min-width: 1824px) {
+      .home .home-text {
+        font-size: 40px; } }
     .home .home-text .page-heading {
       margin-bottom: 0;
       line-height: 1.1;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
       animation: floating 8s cubic-bezier(0.455, 0.03, 0.515, 0.955) 1.5s infinite; }
     .home .home-text .button {
       width: 140px;
-      margin: 1em auto; }
+      margin: 1.875em auto; }
       @media only screen and (min-width: 800px) {
         .home .home-text .button {
           width: 190px; } }
@@ -978,7 +997,8 @@ pre {
     .pop-up.verse h4 {
       margin-bottom: 0.5em;
       text-transform: uppercase;
-      font-size: 1.125em; }
+      font-size: 1em;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif; }
     .pop-up.verse p {
       width: 21.875em;
       margin: 0; }
@@ -1053,6 +1073,8 @@ section.about-intro {
     padding: 1.875em;
     color: #31424c;
     margin-left: auto; }
+    section.about-intro .intro h1 {
+      margin-bottom: 0.46875em; }
     section.about-intro .intro .button {
       display: inline-block;
       margin: 0.3125em 0; }
@@ -1073,7 +1095,7 @@ section.about-intro {
           width: 430px;
           z-index: 1; }
       section.about-intro .intro {
-        width: 70%; } }
+        width: 68%; } }
 
 section.expertise {
   background-color: #fff;
@@ -1157,14 +1179,12 @@ section.extra-info {
         -ms-border-radius: 2%;
         border-radius: 2%; }
       section.extra-info .pictures .image.active + .title, section.extra-info .pictures .image:hover + .title {
-        opacity: 1;
-        z-index: 1;
-        bottom: -3.25em; }
+        opacity: 1; }
     section.extra-info .pictures .title {
       position: absolute;
       background-color: white;
       padding: 0.9375em;
-      bottom: 2em;
+      bottom: -3.25em;
       opacity: 0;
       color: #31424c;
       -webkit-box-shadow: 0 2px 15px -2px rgba(0, 0, 0, 0.3);
@@ -1175,12 +1195,11 @@ section.extra-info {
       transition: all 0.3s ease;
       font-size: 1.125em;
       max-width: 18.75em;
-      width: 100%;
-      z-index: -1; }
+      width: 100%; }
   @media only screen and (min-width: 1224px) {
     section.extra-info {
       padding: 6.09375em 0;
-      height: 100vh;
+      height: 100%;
       max-height: 62.5em; }
       section.extra-info .pictures {
         padding-top: 3.75em; } }
@@ -1277,6 +1296,7 @@ section.portfolio {
 .portfolio-slider {
   text-align: center;
   padding: 3.75em 1.875em;
+  position: relative;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease; }
@@ -1286,7 +1306,7 @@ section.portfolio {
   .portfolio-slider .portfolio-image .desktop-image {
     margin-right: 1.875em;
     max-height: 390px;
-    overflow-y: auto;
+    overflow-y: hidden;
     padding: 0;
     -webkit-box-shadow: 0px 6px 25px 0px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 6px 25px 0px rgba(0, 0, 0, 0.3);
@@ -1301,7 +1321,8 @@ section.portfolio {
         max-height: 630px; } }
     @media only screen and (min-width: 800px) {
       .portfolio-slider .portfolio-image .desktop-image {
-        margin-right: 7.5em; } }
+        margin-right: 7.5em;
+        overflow-y: auto; } }
     @media only screen and (min-width: 1224px) {
       .portfolio-slider .portfolio-image .desktop-image {
         margin-right: 7.5em;
@@ -1315,7 +1336,7 @@ section.portfolio {
     right: 1.875em;
     width: 8em;
     max-height: 15em;
-    overflow-y: auto;
+    overflow-y: hidden;
     -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.075) 0.15s;
     -moz-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.075) 0.15s;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.075) 0.15s; }
@@ -1327,7 +1348,8 @@ section.portfolio {
         font-size: 26px; } }
     @media only screen and (min-width: 800px) {
       .portfolio-slider .portfolio-image .mobile-image {
-        font-size: 32px; } }
+        font-size: 32px;
+        overflow-y: auto; } }
     @media only screen and (min-width: 1224px) {
       .portfolio-slider .portfolio-image .mobile-image {
         font-size: 46px; } }
@@ -1335,6 +1357,8 @@ section.portfolio {
 section.portfolio-items {
   opacity: 0;
   position: absolute;
+  top: 0;
+  bottom: 0;
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
   -ms-transform: scale(0);
@@ -1398,7 +1422,7 @@ section.portfolio-items {
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease; }
     .portfolio-all .wrapper .items:hover {
-      bottom: 0.9375em;
+      bottom: 0.625em;
       -webkit-box-shadow: 0px 5px 25px -4px rgba(0, 0, 0, 0.3);
       -moz-box-shadow: 0px 5px 25px -4px rgba(0, 0, 0, 0.3);
       box-shadow: 0px 5px 25px -4px rgba(0, 0, 0, 0.3); }
@@ -1442,6 +1466,13 @@ section.portfolio-items {
         margin-bottom: 0.625em; }
       .portfolio-all .wrapper .items .item-info p {
         font-size: 0.75em; }
+        @media only screen and (max-width: 400px) {
+          .portfolio-all .wrapper .items .item-info p {
+            overflow: hidden;
+            height: 7em;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical; } }
       @media only screen and (min-width: 550px) {
         .portfolio-all .wrapper .items .item-info {
           font-size: 24px; } }

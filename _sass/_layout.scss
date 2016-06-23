@@ -165,11 +165,15 @@
 .footer-col-2 {
     width: -webkit-calc(50% - (#{$spacing-unit} / 2));
     width: calc(50% - (#{$spacing-unit} / 2));
+    max-width: 150px;
 }
 .footer-col-3,
 .footer-col-4 {
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
     width: calc(100% - (#{$spacing-unit} / 2));
+    h2 {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    }
 }
 @include min-media-query($on-ipad) {
   .footer-col {
@@ -185,6 +189,11 @@
   .footer-col-2 {
       width: -webkit-calc(20% - (#{$spacing-unit} / 2));
       width: calc(20% - (#{$spacing-unit} / 2));
+      margin-top: em(10);
+      @include transition-easy(0.3s);
+      &:hover {
+        margin: 0;
+      }
   }
   .footer-col-3 {
       width: -webkit-calc(45% - (#{$spacing-unit} / 2));

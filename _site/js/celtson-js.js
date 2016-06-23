@@ -175,7 +175,10 @@ Zepto(function($) {
       var dot_number = $(this)[0].dataset.number;
       $('.portfolio-items').removeClass('show-item');
       $('.portfolio-' + dot_number).addClass('show-item');
-      $('.portfolio-' + currentIndex + ' .mobile-image').addClass('show-item');
+
+      $('.mobile-image').removeClass('show-item');
+      $('.portfolio-' + dot_number + ' .mobile-image').addClass('show-item');
+
       $('.dots .fa').removeClass('fa-active');
       $(dots[dot_number - 1].firstElementChild).addClass('fa-active');
     });
