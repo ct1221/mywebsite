@@ -304,6 +304,11 @@ pre {
         display: none !important;
     }
 }
+@include max-media-query($on-ipad) {
+    .hide-on-ipad-down {
+        display: none !important;
+    }
+}
 @include min-media-query($on-ipad) {
     .hide-on-ipad-up {
         display: none !important;
