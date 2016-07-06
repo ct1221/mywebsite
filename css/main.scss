@@ -14,9 +14,10 @@ $lucida-grande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
 $monospace: "Bitstream Vera Sans Mono", Consolas, Monaco, 'Andale Mono', monospace;
 $palatino: Palatino, "Times New Roman", Times, serif;
 $verdana: Verdana, Geneva, sans-serif;
+$myriad: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 
 // Our variables
-$base-font-family:      "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+$base-font-family:      $helvetica;
 $base-font-size:        1em;
 $base-size:             16;
 $base-font-weight:      400;
