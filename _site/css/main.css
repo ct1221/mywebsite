@@ -291,6 +291,7 @@ pre {
   position: relative;
   line-height: 1.5rem;
   display: block;
+  font-weight: 200;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease; }

@@ -252,6 +252,7 @@ pre {
     position: relative;
     line-height: 1.5rem;
     display: block;
+    font-weight: 200;
     @include transition-easy(0.3s);
     &.transparent {
         border: 1px solid $white;
