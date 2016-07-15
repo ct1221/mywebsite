@@ -131,10 +131,23 @@
 .site-footer {
     padding: $spacing-unit 0;
     background-color: $primary-color;
+    position: relative;
 }
 .footer-heading {
     font-size: em(18);
     margin-bottom: $spacing-unit / 2;
+}
+.contact-me {
+    position: absolute;
+    top: em(-80);
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: $accent-color;
+    font-weight: 200;
+    opacity: 0;
+    animation: fade-in 6s 0.1s, bounce 2s 1s 2;
+    p { margin: 0; }
 }
 .contact-list,
 .social-media-list {

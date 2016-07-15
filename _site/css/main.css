@@ -622,11 +622,25 @@ pre {
  */
 .site-footer {
   padding: 1.875em 0;
-  background-color: #12a6fb; }
+  background-color: #12a6fb;
+  position: relative; }
 
 .footer-heading {
   font-size: 1.125em;
   margin-bottom: 0.9375em; }
+
+.contact-me {
+  position: absolute;
+  top: -5em;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #cddc39;
+  font-weight: 200;
+  opacity: 0;
+  animation: fade-in 6s 0.1s, bounce 2s 1s 2; }
+  .contact-me p {
+    margin: 0; }
 
 .contact-list,
 .social-media-list {

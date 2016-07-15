@@ -80,6 +80,13 @@ Zepto(function($) {
         $(this).addClass('active');
     })
 
+    $('.button.contact').on("click", function (e) {
+      e.stopPropagation();
+      var elm = document.getElementById('contact-me');
+      var newone = elm.cloneNode(true);
+      elm.parentNode.replaceChild(newone, elm);
+    })
+
     // Code help from: https://gist.github.com/benjamincharity/6058688
     function smoothScroll(el, to, duration) {
         if (duration < 0) {
