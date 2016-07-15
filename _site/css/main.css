@@ -638,7 +638,10 @@ pre {
   color: #cddc39;
   font-weight: 200;
   opacity: 0;
+  display: none;
   animation: fade-in 6s 0.1s, bounce 2s 1s 2; }
+  .contact-me.active {
+    display: block; }
   .contact-me p {
     margin: 0; }
 

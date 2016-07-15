@@ -146,7 +146,9 @@
     color: $accent-color;
     font-weight: 200;
     opacity: 0;
+    display: none;
     animation: fade-in 6s 0.1s, bounce 2s 1s 2;
+    &.active { display: block; }
     p { margin: 0; }
 }
 .contact-list,

@@ -83,6 +83,7 @@ Zepto(function($) {
     $('.button.contact').on("click", function (e) {
       e.stopPropagation();
       var elm = document.getElementById('contact-me');
+      $('#contact-me').addClass('active');
       var newone = elm.cloneNode(true);
       elm.parentNode.replaceChild(newone, elm);
     })
