@@ -40,7 +40,7 @@
         .page-heading {
             margin-bottom: 0;
             line-height: 1.1;
-            font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+            font-family: $josefin-sans;
             // animation: floating 8s $ease-in-out-quad 1.5s infinite;
         }
         .button {
@@ -97,7 +97,6 @@
             margin-bottom: $mini-space;
             text-transform: uppercase;
             font-size: em(16);
-            font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
         }
         p {
             width: 21.875em;
@@ -583,7 +582,7 @@ section.portfolio-items {
                 }
               }
               @include min-media-query(550px) {
-                font-size: 24px;
+                font-size: 26px;
               }
               @include min-media-query($on-ipad) {
                 font-size: 20px;

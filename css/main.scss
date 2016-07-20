@@ -15,9 +15,11 @@ $monospace: "Bitstream Vera Sans Mono", Consolas, Monaco, 'Andale Mono', monospa
 $palatino: Palatino, "Times New Roman", Times, serif;
 $verdana: Verdana, Geneva, sans-serif;
 $myriad: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+$josefin-slab: 'Josefin Slab', serif;
+$josefin-sans: 'Josefin Sans', sans-serif;
 
 // Our variables
-$base-font-family:      $helvetica;
+$base-font-family:      $josefin-sans;
 $base-font-size:        1em;
 $base-size:             16;
 $base-font-weight:      400;

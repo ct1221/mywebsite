@@ -89,7 +89,7 @@ ul {
  * Basic styling
  */
 body {
-  font: 100 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 100 16px "Josefin Sans", sans-serif;
   color: #e4edf4;
   background-color: #12a6fb;
   -webkit-text-size-adjust: 100%;
@@ -168,7 +168,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 400; }
+  font-family: "Josefin Slab", serif; }
 
 /**
  * Links
@@ -684,9 +684,6 @@ pre {
 .footer-col-4 {
   width: -webkit-calc(100% - (1.875em / 2));
   width: calc(100% - (1.875em / 2)); }
-  .footer-col-3 h2,
-  .footer-col-4 h2 {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif; }
 
 @media only screen and (min-width: 800px) {
   .footer-col {
@@ -724,16 +721,16 @@ pre {
   position: relative;
   z-index: 0; }
   .page-content p {
-    font-size: 1.125em;
+    font-size: 1.25em;
     line-height: 1.75em; }
   .page-content h1, .page-content h2 {
     font-size: 2em;
     font-weight: 200; }
 
 .page-heading {
-  font-size: 1.25em; }
+  font-size: 1.5em; }
   .page-heading.second-line {
-    font-size: 2.5em;
+    font-size: 2.75em;
     text-shadow: 0 4px 3px rgba(0, 0, 0, 0.03), 0 8px 13px rgba(0, 0, 0, 0.03), 0 4px 0px rgba(0, 0, 0, 0.03); }
 
 .post-list {
@@ -964,7 +961,7 @@ pre {
     .home .home-text .page-heading {
       margin-bottom: 0;
       line-height: 1.1;
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif; }
+      font-family: "Josefin Sans", sans-serif; }
     .home .home-text .button {
       width: 150px;
       margin: 1.875em auto; }
@@ -1019,8 +1016,7 @@ pre {
     .pop-up.verse h4 {
       margin-bottom: 0.5em;
       text-transform: uppercase;
-      font-size: 1em;
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif; }
+      font-size: 1em; }
     .pop-up.verse p {
       width: 21.875em;
       margin: 0; }
