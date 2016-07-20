@@ -728,9 +728,9 @@ pre {
     font-weight: 200; }
 
 .page-heading {
-  font-size: 1.5em; }
+  font-size: 1.125em; }
   .page-heading.second-line {
-    font-size: 2.75em;
+    font-size: 2.25em;
     text-shadow: 0 4px 3px rgba(0, 0, 0, 0.03), 0 8px 13px rgba(0, 0, 0, 0.03), 0 4px 0px rgba(0, 0, 0, 0.03); }
 
 .post-list {
@@ -953,11 +953,11 @@ pre {
     vertical-align: middle; }
     @media only screen and (min-width: 800px) {
       .home .home-text {
-        font-size: 34px;
+        font-size: 40px;
         animation: slide-down 1.5s ease forwards; } }
     @media only screen and (min-width: 1824px) {
       .home .home-text {
-        font-size: 40px; } }
+        font-size: 48px; } }
     .home .home-text .page-heading {
       margin-bottom: 0;
       line-height: 1.1;
@@ -1494,7 +1494,7 @@ section.portfolio-items {
             -webkit-box-orient: vertical; } }
       @media only screen and (min-width: 550px) {
         .portfolio-all .wrapper .items .item-info {
-          font-size: 24px; } }
+          font-size: 26px; } }
       @media only screen and (min-width: 800px) {
         .portfolio-all .wrapper .items .item-info {
           font-size: 20px; } }
