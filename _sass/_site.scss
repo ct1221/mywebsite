@@ -413,6 +413,22 @@ section.portfolio {
     padding: $spacing-unit * 2 $spacing-unit;
     position: relative;
     @include transition-easy(0.3s);
+    .scroll-me {
+      display: none;
+      opacity: 0;
+      @include min-media-query($on-ipad) {
+        display: block;
+        position: absolute;
+        top: 450px;
+        right: 0;
+        color: $accent-color-2;
+        animation: fade-in 10s 1.5s ease, scroll-me 2s ease 5;
+      }
+      @include min-media-query($on-laptop) {
+        top: 550px;
+      }
+      p { margin: 0; }
+    }
     &.wrapper {
         @include min-media-query($on-laptop) {
             max-width: calc(1280px - (1.875em * 2));

@@ -14,6 +14,22 @@
     -ms-transform: translateY(0);
     transform: translateY(0);
     opacity: 1; } }
+@keyframes scroll-me {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.125);
+    -moz-transform: scale(1.125);
+    -ms-transform: scale(1.125);
+    transform: scale(1.125); }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); } }
 @keyframes fade-in {
   0% {
     opacity: 0; }
@@ -1319,6 +1335,22 @@ section.portfolio {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease; }
+  .portfolio-slider .scroll-me {
+    display: none;
+    opacity: 0; }
+    @media only screen and (min-width: 800px) {
+      .portfolio-slider .scroll-me {
+        display: block;
+        position: absolute;
+        top: 450px;
+        right: 0;
+        color: #ffc107;
+        animation: fade-in 10s 1.5s ease, scroll-me 2s ease 5; } }
+    @media only screen and (min-width: 1224px) {
+      .portfolio-slider .scroll-me {
+        top: 550px; } }
+    .portfolio-slider .scroll-me p {
+      margin: 0; }
   @media only screen and (min-width: 1224px) {
     .portfolio-slider.wrapper {
       max-width: calc(1280px - (1.875em * 2)); } }
