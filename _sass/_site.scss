@@ -730,3 +730,20 @@ section.portfolio-items {
         z-index: 1;
     }
 }
+/* - - - - - 404 ERROR PAGE - - - - -  */
+.error-page {
+  background-color: $white;
+  color: $primary-color;
+  padding-top: $spacing-unit * 2.5;
+  text-align: center;
+  a {
+    border-bottom: 1px solid $white;
+    @include transition-easy(0.3s);
+    color: $primary-color-dark;
+    &:hover { border-bottom: 1px solid $primary-color-dark; }
+  }
+  .img-wrap {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
