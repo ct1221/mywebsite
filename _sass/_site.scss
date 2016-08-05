@@ -178,6 +178,7 @@ section.about-intro {
         h1 {
           margin-bottom: $spacing-unit / 4;
         }
+        p { position: relative; }
         .button {
             display: inline-block;
             margin: em(5) 0;
@@ -187,22 +188,23 @@ section.about-intro {
         }
     }
     @include min-media-query($on-ipad) {
-        padding-top: 6em;
+        padding-top: 15em;
         .wrapper {
+            max-width: calc(1280px - (1.875em * 2));
             position: relative;
             &::before {
                 content: "";
-                background: url('/img/about/me.png') top center/cover no-repeat;
+                background: url('/img/about/flat-me.gif') top center/cover no-repeat;
                 height: 520px;
                 position: absolute;
-                bottom: -5.5em;
-                left: -7.5em;
-                width: 430px;
-                z-index: 1;
+                bottom: 0;
+                left: -5em;
+                width: 500px;
+                z-index: 0;
             }
         }
         .intro {
-            width: 68%;
+            width: 65%;
         }
     }
 }
@@ -416,6 +418,7 @@ section.portfolio {
     .scroll-me {
       display: none;
       opacity: 0;
+      @include transform(rotate(35deg));
       @include min-media-query($on-ipad) {
         display: block;
         position: absolute;

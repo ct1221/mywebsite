@@ -16,20 +16,20 @@
     opacity: 1; } }
 @keyframes scroll-me {
   0% {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1); }
+    -webkit-transform: scale(1) rotate(35deg);
+    -moz-transform: scale(1) rotate(35deg);
+    -ms-transform: scale(1) rotate(35deg);
+    transform: scale(1) rotate(35deg); }
   50% {
-    -webkit-transform: scale(1.125);
-    -moz-transform: scale(1.125);
-    -ms-transform: scale(1.125);
-    transform: scale(1.125); }
+    -webkit-transform: scale(1.125) rotate(35deg);
+    -moz-transform: scale(1.125) rotate(35deg);
+    -ms-transform: scale(1.125) rotate(35deg);
+    transform: scale(1.125) rotate(35deg); }
   100% {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1); } }
+    -webkit-transform: scale(1) rotate(35deg);
+    -moz-transform: scale(1) rotate(35deg);
+    -ms-transform: scale(1) rotate(35deg);
+    transform: scale(1) rotate(35deg); } }
 @keyframes fade-in {
   0% {
     opacity: 0; }
@@ -1109,6 +1109,8 @@ section.about-intro {
     margin-left: auto; }
     section.about-intro .intro h1 {
       margin-bottom: 0.46875em; }
+    section.about-intro .intro p {
+      position: relative; }
     section.about-intro .intro .button {
       display: inline-block;
       margin: 0.3125em 0; }
@@ -1116,20 +1118,21 @@ section.about-intro {
         margin-right: 1em; }
   @media only screen and (min-width: 800px) {
     section.about-intro {
-      padding-top: 6em; }
+      padding-top: 15em; }
       section.about-intro .wrapper {
+        max-width: calc(1280px - (1.875em * 2));
         position: relative; }
         section.about-intro .wrapper::before {
           content: "";
-          background: url("/img/about/me.png") top center/cover no-repeat;
+          background: url("/img/about/flat-me.gif") top center/cover no-repeat;
           height: 520px;
           position: absolute;
-          bottom: -5.5em;
-          left: -7.5em;
-          width: 430px;
-          z-index: 1; }
+          bottom: 0;
+          left: -5em;
+          width: 500px;
+          z-index: 0; }
       section.about-intro .intro {
-        width: 68%; } }
+        width: 65%; } }
 
 section.expertise {
   background-color: #fff;
@@ -1337,7 +1340,11 @@ section.portfolio {
   transition: all 0.3s ease; }
   .portfolio-slider .scroll-me {
     display: none;
-    opacity: 0; }
+    opacity: 0;
+    -webkit-transform: rotate(35deg);
+    -moz-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    transform: rotate(35deg); }
     @media only screen and (min-width: 800px) {
       .portfolio-slider .scroll-me {
         display: block;

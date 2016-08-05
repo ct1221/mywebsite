@@ -37,9 +37,9 @@
 }
 
 @keyframes scroll-me {
-  0% { @include transform(scale(1)); }
-  50% { @include transform(scale(1.125)); }
-  100% { @include transform(scale(1)); }
+  0% { @include transform(scale(1) rotate(35deg)); }
+  50% { @include transform(scale(1.125) rotate(35deg)); }
+  100% { @include transform(scale(1) rotate(35deg)); }
 }
 
 // fade-in
