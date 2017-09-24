@@ -7,6 +7,17 @@
 /** Don't forget to design mobile first bud!! **/
 /** ========================================= **/
 
+/* Local Font Families */
+@font-face {
+	font-family: 'Josefin Sans';
+	src: url('../fonts/josefinsans/Josefin-Sans-300.ttf');
+}
+
+@font-face {
+	font-family: 'Josefin Slab';
+	src: url('../fonts/josefinslab/Josefin-Slab-regular.ttf');
+}
+
 // Fonts
 $georgia: Georgia, Cambria, "Times New Roman", Times, serif;
 $helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -79,6 +90,12 @@ $on-monitor:            1824px;
     }
 }
 
+@mixin media-query($device1, $device2) {
+    @media only screen and (min-width: $device1) and (max-width: $device2) {
+        @content;
+    }
+}
+
 // From px to em & rems functions.
 @function em($pixel){
   @return (1/16) * $pixel+em;
@@ -89,9 +106,9 @@ $on-monitor:            1824px;
 
 // Good ole' mixins for browser fixes!
 @mixin transition-easy($time) {
-    -webkit-transition: all $time ease;
-    -moz-transition: all $time ease;
-    transition: all $time ease;
+    -webkit-transition: all $time;
+    -moz-transition: all $time;
+    transition: all $time;
 }
 @mixin transition($args...) {
     -webkit-transition: $args;
@@ -152,6 +169,6 @@ $on-monitor:            1824px;
         "animations",
         "base",
         "layout",
-        "syntax-highlighting",
-        "site"
+				"site",
+        "syntax-highlighting"
 ;

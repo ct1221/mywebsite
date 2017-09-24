@@ -5,15 +5,9 @@
 
 <body class="home-page">
     <!-- For the opacity fade-in on page load -->
-    <script>
-        document.body.className += ' fade-out';
-    </script>
+    <script>document.body.className += ' fade-out';</script>
 
-    <div id="barba-wrapper">
-        <div class="barba-container">
-            {{ content }}
-        </div>
-    </div>
+    {{ content }}
 
     <script>
         function downloadJSAtOnload() {

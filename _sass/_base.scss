@@ -54,6 +54,9 @@ body {
         opacity: 0;
         @include transition(none);
     }
+    &.no-scroll {
+      overflow: hidden;
+    }
 }
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -213,14 +216,19 @@ pre {
         }
     }
 }
+
+.menu-icon > svg .nav {
+  @include transition-easy(0.3s);
+}
+
 /**
  * Columns
  */
 .half-col {
-    @include min-media-query($on-palm) {
-        width: 50%;
-        float: left;
-    }
+  @include min-media-query($on-palm) {
+      width: 50%;
+      float: left;
+  }
 }
 .col-1-3 {
   @include min-media-query($on-palm) {
@@ -253,6 +261,7 @@ pre {
     line-height: 1.5rem;
     display: block;
     font-weight: 200;
+    border-radius: 25px;
     @include transition-easy(0.3s);
     &.transparent {
         border: 1px solid $white;
@@ -270,6 +279,7 @@ pre {
             opacity: 0;
             height: 100%;
             top: 0;
+            border-radius: 25px;
         }
         @include min-media-query($on-ipad) {
             font-size: rem(18);
@@ -280,7 +290,7 @@ pre {
       background-color: $accent-color;
       color: $white;
       font-size: $base-font-size;
-      &:hover { @include box-shadow(0px 2px 12px -1px rgba(0,0,0,0.3)); font-weight: normal; }
+      &:hover { @include box-shadow(0px 2px 8px -2px rgba(0, 0, 0, 0.3)); }
     }
     &.accent-2 {
       @extend .accent;
@@ -338,8 +348,7 @@ pre {
  */
 @font-face {
     font-family: 'FontAwesome';
-    // src: url('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?v=4.2.0');
-    src: url('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+    src: url('http://netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('http://netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('http://netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -378,7 +387,7 @@ pre {
         &:hover {
             bottom: em(2);
             .fa-stack-2x {
-                text-shadow: 0 4px 3px rgba(0,0,0,0.1), 0 8px 13px rgba(0,0,0,0.07), 0 18px 23px rgba(0,0,0,0.07);
+                text-shadow: 0 4px 5px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.07), 0 15px 20px rgba(0, 0, 0, 0.07);
             }
         }
     }
@@ -439,6 +448,9 @@ pre {
 }
 .fa-medium:before {
     content: "\f23a";
+}
+.fa-quora:before {
+  content: "\f2c4";
 }
 .fa-chevron-down:before {
     content: "\f078";

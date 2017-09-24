@@ -1,3 +1,28 @@
+<nav class="site-nav">
+    <a href="#" class="menu-icon" name="menu-modal">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="29" height="24" viewBox="0 0 29 24">
+            <g id="menu-icon">
+                <rect fill="#12a6fb" id="rect-1" class="nav" y="10" width="29" height="3" />
+                <rect fill="#12a6fb" id="rect-2" class="nav" y="20" width="29" height="3" />
+                <rect fill="#12a6fb" id="rect-3" class="nav" width="29" height="3" />
+            </g>
+        </svg>
+    </a>
+</nav>
+
+<div class="menu-header hidden">
+
+  <div class="trigger">
+      {% assign pages = site.pages | sort:"weight" %} {% for my_page in pages %} {% if my_page.url != page.url and my_page.weight %}
+      <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a> {% endif %} {% endfor %}
+      <a class="page-link" href="#" name="resume-modal">Resume</a>
+      <a class="page-link" href="https://medium.com/@celtsontoote">Blog</a>
+  </div>
+
+  <a href="#" class="close-menu" name="close-menu"><img src="/img/menu-close.png" alt="Close X Button" width="40" height="40"></a>
+
+</div>
+
 <header class="site-header">
 
     <div class="title-wrapper">
@@ -5,27 +30,7 @@
     </div>
 
     <div class="verse-wrapper">
-        <h2>Quote:<span> Our duty isn't to find the lovable person, but rather to find every person we encounter lovable.</span></h2>
+        <h2>Quote:<span> Be kind, for everyone you meet is fighting a harder battle. - Plato</span></h2>
     </div>
-
-
-    <nav class="site-nav">
-        <a href="#" class="menu-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="29" height="24" viewBox="0 0 29 24">
-                <g id="menu-icon">
-                    <rect fill="#12a6fb" id="rect-1" class="nav" y="10" width="29" height="3" />
-                    <rect fill="#12a6fb" id="rect-2" class="nav" y="20" width="29" height="3" />
-                    <rect fill="#12a6fb" id="rect-3" class="nav" width="29" height="3" />
-                </g>
-            </svg>
-        </a>
-
-        <div class="trigger">
-            {% assign pages = site.pages | sort:"weight" %} {% for my_page in pages %} {% if my_page.url != page.url and my_page.weight %}
-            <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a> {% endif %} {% endfor %}
-            <a class="page-link" href="#" name="resume-modal">Resume</a>
-            <a class="page-link" href="https://medium.com/@celtsontoote">Blog</a>
-        </div>
-    </nav>
 
 </header>

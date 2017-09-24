@@ -197,6 +197,7 @@ Zepto(function($) {
     //select all the a tag with name equal to modal
     $('a[name=resume-modal]').click(function(e) {
         e.preventDefault();
+        $('body').addClass('no-scroll');
         $('.modal-cover').addClass('modal-background');
         $('.modal-window').addClass('modal-show');
     });
@@ -204,6 +205,20 @@ Zepto(function($) {
         e.preventDefault();
         $('.modal-cover').removeClass('modal-background');
         $('.modal-window').removeClass('modal-show');
+        $('body').removeClass('no-scroll');
+    });
+
+    // ================= Close Menu ============== //
+    // =================            ============== //
+    $('a[name=menu-modal]').click(function(e) {
+        e.preventDefault();
+        $('body').addClass('no-scroll');
+        $('.header').removeClass('hidden');
+    });
+    $('a[name=close-menu]').click(function(e) {
+        e.preventDefault();
+        $('.header').removeClass('hidden');
+        $('body').removeClass('no-scroll');
     });
 
 })

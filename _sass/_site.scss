@@ -1,18 +1,7 @@
 /** ========================================= **/
 /** Don't forget to design mobile first bud!  **/
 /** ========================================= **/
-.barba-container {
-    @include transition-easy(0.3s);
-    .hide {
-        display: none;
-    }
-    .fadeOut {
-        opacity: 0 !important;
-    }
-    .fadeIn {
-        opacity: 1 !important;
-    }
-}
+
 /* - - - - - HOME PAGE - - - - -  */
 .home-page {
     background-color: $primary-color;
@@ -30,6 +19,7 @@
         width: 100%;
         text-align: center;
         vertical-align: middle;
+        z-index: 0;
         @include min-media-query($on-ipad) {
             font-size: 40px;
             animation: slide-down 1.5s ease forwards;
@@ -76,7 +66,7 @@
     bottom: em(80);
     font-size: 12px;
     line-height: rem(16);
-    @include transition-easy(0.3s);
+    @include transition(all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.1175));
     @include min-media-query($on-ipad) {
         font-size: 16px;
         line-height: 1.5rem;
@@ -89,6 +79,9 @@
         padding: 1.5em;
         color: $text-color-dark;
         background-color: $white;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
         @include box-shadow(2px 3px 10px 0 rgba(0,0,0,$box-shadow-opacity));
         &.active-jq {
             left: -999px;
@@ -114,7 +107,7 @@
         }
         span.close {
             right: 0;
-            bottom: 3.5em;
+            bottom: 3.25em;
             color: $white;
             background-color: $accent-color;
             @include box-shadow (0px 4px 10px -2px rgba(0,0,0,0.2));
@@ -134,10 +127,10 @@
             background-color: $accent-color;
         }
         @include min-media-query($on-ipad) {
-            padding: 0.4em 0.95em;
+            padding: 0.05em 0.6em;
         }
         @include min-media-query($on-monitor) {
-            padding: 0.4em 0.85em;
+            padding: 0.05em 0.5em;
         }
     }
     &.hide {
@@ -166,6 +159,7 @@ footer.home-footer {
         }
     }
 }
+
 /* - - - - - ABOUT PAGE - - - - -  */
 section.about-intro {
     border-bottom: 11px solid $primary-color-dark;
@@ -346,7 +340,7 @@ article.post {
     padding-bottom: $spacing-unit * 1.75;
     color: $text-color-dark;
     text-align: center;
-    @include transition(all 0.3s ease 0.15s);
+    @include transition(all 0.5s ease 0.15s);
     @include transform(translateY(-15%));
     .button {
       max-width: em(170);
@@ -368,6 +362,7 @@ article.post {
 }
 section.portfolio {
     position: relative;
+    padding-bottom: $spacing-unit * 2;
     .arrow {
         position: absolute;
         top: 50%;
@@ -469,7 +464,7 @@ section.portfolio {
             width: 8em;
             max-height: 15em;
             overflow-y: hidden;
-            @include transition(all 0.3s $ease-out-back 0.15s);
+            @include transition(all 0.5s $ease-out-back 0.165s);
             &.show-item {
               right: 0;
             }
@@ -493,7 +488,7 @@ section.portfolio-items {
   top: 0;
   bottom: 0;
   @include transform( scale(0));
-  @include transition-easy(0.3s);
+  @include transition-easy(0.5s);
   &.show-item {
       position: relative;
       @include transform( scale(1));
@@ -505,6 +500,7 @@ section.portfolio-items {
 }
 .dots {
     text-align: center;
+    padding-bottom: $spacing-unit;
     .fa {
         cursor: pointer;
         color: $text-color-light;
@@ -514,108 +510,127 @@ section.portfolio-items {
     }
 }
 .portfolio-footer {
-    padding: $spacing-unit 0;
+    padding-bottom: $spacing-unit;
     .button {
-        float: right;
-    }
-    &.wrapper {
-        @include min-media-query($on-laptop) {
-            max-width: calc(1280px - (1.875em * 2));
-        }
+      max-width: 250px;
+      margin-left: auto;
+      margin-right: auto;
     }
 }
 // Extra Portfolio Items
 .portfolio-all {
   padding: $spacing-unit 0;
-  .wrapper {
-      @include min-media-query($on-ipad) {
-          max-width: calc(1280px - (1.875em * 2));
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @include min-media-query($on-ipad) {
+    padding: $spacing-unit;
+  }
+  // .wrapper {
+  //     @include min-media-query($on-ipad) {
+  //         max-width: calc(1280px - (1.875em * 2));
+  //     }
+  // }
+  .half-col {
+      padding: $spacing-unit / 2;
+      @include max-media-query(850px) {
+          width: 100%;
       }
-      .half-col {
-          padding: $spacing-unit / 2;
-          @include max-media-query($on-ipad) {
-              width: 100%;
+      @include media-query(850px, 1500px) {
+          &:nth-of-type(2n + 1) {
+            clear: both;
           }
       }
-      .col-1-3 {
-        padding: $spacing-unit / 2;
-        @include max-media-query($on-ipad) {
-            width: 100%;
-        }
+      @include media-query(1500px, $on-monitor) {
+          width: 33.3333%;
+          &:nth-of-type(3n + 4) {
+            clear: both;
+          }
       }
-      .items {
-          background-color: $white;
-          position: relative;
-          color: $text-color-dark;
-          bottom: 0;
-          @include box-shadow(0px 0px 10px -4px rgba(0,0,0, $box-shadow-opacity));
-          @include transition-easy(0.3s);
-          &:hover {
-            bottom: $spacing-unit / 3;
-            @include box-shadow(0px 5px 25px -4px rgba(0,0,0, $box-shadow-opacity));
-              &::after {
-                  opacity: 1;
-              }
-              .item-info {
-                  opacity: 1;
-                  z-index: 1;
-              }
-          }
-          &::after {
-              content: "";
-              background-color: $white;
-              position: absolute;
-              height: 100%;
-              width: 100%;
-              top: 0;
-              left: 0;
-              opacity: 0;
-              @include transition-easy(0.3s);
-          }
-          .item-info {
-              @include transition-easy(0.2s);
-              opacity: 0;
-              position: absolute;
-              text-align: center;
-              width: 100%;
-              top: 50%;
-              padding: 0 $spacing-unit;
-              @include transform(translateY(-50%));
-              .button {
-                max-width: em(170);
-                margin: 0 auto;
-                font-size: em(12);
-              }
-              h1 {
-                font-size: em(24);
-                margin-bottom: em(10);
-              }
-              p {
-                font-size: em(12);
-                @include max-media-query($on-finger) {
-                  overflow: hidden;
-                  height: 7em;
-                  display: -webkit-box;
-                  -webkit-line-clamp: 4;
-                  -webkit-box-orient: vertical;
-                }
-              }
-              @include min-media-query(550px) {
-                font-size: 26px;
-              }
-              @include min-media-query($on-ipad) {
-                font-size: 20px;
-              }
+      @include min-media-query($on-monitor) {
+          width: 25%;
+          &:nth-of-type(4n + 5) {
+            clear: both;
           }
       }
   }
-  .portfolio-footer {
-    .button {
-      margin-top: $spacing-unit;
+  .col-1-3 {
+    padding: $spacing-unit / 2;
+    @include max-media-query($on-ipad) {
+        width: 100%;
     }
   }
+  .items {
+      background-color: $white;
+      position: relative;
+      color: $text-color-dark;
+      bottom: 0;
+      @include box-shadow(0px 0px 18px -5px rgba(0,0,0, $box-shadow-opacity));
+      @include transition-easy(0.3s);
+      &:hover {
+        bottom: $spacing-unit / 3;
+        @include box-shadow(0px 5px 30px -5px rgba(0,0,0, $box-shadow-opacity));
+          &::after {
+              opacity: 1;
+          }
+          .item-info {
+              opacity: 1;
+              z-index: 1;
+          }
+      }
+      &::after {
+          content: "";
+          background-color: $white;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          @include transition-easy(0.3s);
+      }
+      .item-info {
+          @include transition-easy(0.2s);
+          opacity: 0;
+          position: absolute;
+          text-align: center;
+          width: 100%;
+          top: 50%;
+          padding: 0 $spacing-unit;
+          @include transform(translateY(-50%));
+          .button {
+            max-width: em(170);
+            margin: 0 auto;
+            font-size: em(12);
+          }
+          h1 {
+            font-size: em(24);
+            margin-bottom: em(10);
+          }
+          p {
+            font-size: em(12);
+            @include max-media-query($on-finger) {
+              overflow: hidden;
+              height: 7em;
+              display: -webkit-box;
+              -webkit-line-clamp: 4;
+              -webkit-box-orient: vertical;
+            }
+          }
+          @include min-media-query(550px) {
+            font-size: 26px;
+          }
+          @include min-media-query($on-ipad) {
+            font-size: 20px;
+          }
+      }
+  }
 }
+
 /* - - - - - RESUME TEMPLATE - - - - -  */
+.resume-section { @include box-shadow(0px 0px 10px 1px rgba(0,0,0,0.2)); }
 .modal-window {
     position: fixed;
     opacity: 0;
@@ -704,6 +719,7 @@ section.portfolio-items {
         .button {
             width: 210px;
             margin: 0 auto;
+            color: $white;
             &:hover {
                 color: $text-color-dark2;
                 background-color: $white;
@@ -730,6 +746,7 @@ section.portfolio-items {
         z-index: 1;
     }
 }
+
 /* - - - - - 404 ERROR PAGE - - - - -  */
 .error-page {
   background-color: $white;
