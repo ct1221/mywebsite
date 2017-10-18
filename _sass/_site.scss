@@ -745,6 +745,79 @@ section.portfolio-items {
         opacity: 0.5;
         z-index: 1;
     }
+    &.countdown {
+      opacity: 0.9;
+    }
+}
+
+/* - - - - - COUNTDOWN TEMPLATE - - - - -  */
+.open-countdown {
+  position: fixed;
+  top: 1.5625rem;
+  right: 1.875rem;
+  width: 30px;
+  @include transition(transform 0.3s, left 0s 0s, opacity 0.3s 0s);
+  &.hidden {
+    left: -9999px;
+    opacity: 0;
+    @include transition(left 0s 0.3s, opacity 0.3s 0s);
+  }
+  &:hover {
+    @include transform(rotate(40deg));
+  }
+}
+
+.countdown-section {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  @include transition(left 0s 0s, opacity 0.3s 0s);
+  &.hidden-countdown {
+    left: -9999px;
+    opacity: 0;
+    @include transition(left 0s 0.3s, opacity 0.3s 0s);
+  }
+}
+
+a.close-countdown {
+  width: 30px;
+  position: absolute;
+  top: 1.5625rem;
+  right: 1.875rem;
+  @include transition-easy(0.3s);
+  &:hover {
+      @include transform(rotate(180deg));
+  }
+}
+
+.clockdiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  h2 {
+    font-size: 3em;
+    text-align: center;
+    color: $primary-color-light;
+  }
+  .clockdiv_cont {
+    display: inline-grid;
+    text-align: center;
+    margin-left: $spacing-unit / 1.5;
+    margin-right: $spacing-unit / 1.5;
+  }
+  .days, .hours, .minutes, .seconds {
+    font-size: 6em;
+    line-height: 1em;
+  }
+  .smalltext {
+    margin: 0;
+    font-size: 2em;
+    color: $primary-color-light;
+  }
 }
 
 /* - - - - - 404 ERROR PAGE - - - - -  */

@@ -61,10 +61,11 @@
 .site-title {
     font-size: em(48);
     font-weight: 300;
-    line-height: 3.25em;
+    line-height: 1em;
     letter-spacing: -1px;
     margin-bottom: 0;
     padding: em(16);
+    display: block;
 }
 
 .menu-header {
@@ -72,7 +73,7 @@
   height: 100vh;
   position: fixed;
   background-color: #fff;
-  z-index: 2;
+  z-index: 3;
   opacity: 1;
   left: 0;
   @include transition(left 0s 0s, opacity 0.3s 0s);
@@ -109,7 +110,7 @@
 .site-nav {
     line-height: 3.5em;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     top: rem(25);
     left: rem(30);
     cursor: pointer;
@@ -126,48 +127,6 @@
           > svg .nav:first-of-type { width: 12px; }
         }
     }
-    // .trigger {
-    //     width: em(192);
-    //     position: absolute;
-    //     left: rem(-999);
-    //     @include transition-easy(0.3s);
-    // }
-    // &:hover .trigger {
-    //     left: rem(-30);
-    //     padding: rem(12) rem(30);
-    // }
-    // .page-link {
-    //     color: $text-color-light;
-    //     line-height: $base-line-height * 1.33;
-    //     display: block;
-    //     cursor: pointer;
-    //     font-size: em(20);
-    //     border-bottom: 1px solid transparent;
-    //     border-top: 1px solid transparent;
-    //     @include transition-easy(0.3s);
-    //     &:hover {
-    //         color: $white;
-    //         border-bottom: 1px solid $white;
-    //         border-top: 1px solid $white;
-    //         text-indent: em(20);
-    //     }
-    // }
-    // @include max-media-query($on-palm) {
-    //   &:hover .trigger {
-    //       background-color: white;
-    //       @include box-shadow(1px 5px 12px -4px rgba(0,0,0, 0.3));
-    //       margin-top: em(10);
-    //   }
-    //   .page-link {
-    //     color: $primary-color;
-    //     &:hover {
-    //       color: $primary-color;
-    //       border-bottom: 1px solid $primary-color;
-    //       border-top: 1px solid $primary-color;
-    //       text-indent: em(20);
-    //     }
-    //   }
-    // }
 }
 
 .trigger {

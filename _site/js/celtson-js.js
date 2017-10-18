@@ -213,12 +213,73 @@ Zepto(function($) {
     $('a[name=menu-modal]').click(function(e) {
         e.preventDefault();
         $('body').addClass('no-scroll');
-        $('.header').removeClass('hidden');
+        $('.menu-header').removeClass('hidden');
     });
     $('a[name=close-menu]').click(function(e) {
         e.preventDefault();
-        $('.header').removeClass('hidden');
+        $('.menu-header').addClass('hidden');
         $('body').removeClass('no-scroll');
     });
+
+    // ================= Countdown ============== //
+    // =================           ============== //
+    // Reference: https://codepen.io/SitePoint/pen/MwNPVq
+
+    function getTimeRemaining(endtime) {
+      var t = Date.parse(endtime) - Date.parse(new Date());
+      var seconds = Math.floor((t / 1000) % 60);
+      var minutes = Math.floor((t / 1000 / 60) % 60);
+      var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+      var days = Math.floor(t / (1000 * 60 * 60 * 24));
+      return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+      };
+    }
+
+    function initializeClock(id, endtime) {
+      var clock = document.getElementById(id);
+      var daysSpan = clock.querySelector('.days');
+      var hoursSpan = clock.querySelector('.hours');
+      var minutesSpan = clock.querySelector('.minutes');
+      var secondsSpan = clock.querySelector('.seconds');
+
+      function updateClock() {
+        var t = getTimeRemaining(endtime);
+
+        daysSpan.innerHTML = t.days;
+        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+        if (t.total <= 0) {
+          clearInterval(timeinterval);
+        }
+      }
+
+      updateClock();
+      var timeinterval = setInterval(updateClock, 1000);
+    }
+
+    // var deadline = new Date(Date.parse(new Date()) + 222 * 24 * 60 * 60 * 1000);
+    initializeClock('clockdiv', "November 22 2017");
+
+    $('.open-countdown').click(function(e) {
+        e.preventDefault();
+        $('.modal-cover').addClass('modal-background countdown');
+        $('.countdown-section').removeClass('hidden-countdown');
+        $(this).addClass('hidden');
+    });
+
+    $('a.close-countdown').click(function(e) {
+        e.preventDefault();
+        $('.modal-cover').removeClass('modal-background countdown');
+        $('.countdown-section').addClass('hidden-countdown');
+        $('.open-countdown').removeClass('hidden');
+    });
+
 
 })
