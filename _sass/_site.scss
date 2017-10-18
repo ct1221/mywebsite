@@ -798,10 +798,12 @@ a.close-countdown {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
   h2 {
     font-size: 3em;
     text-align: center;
     color: $primary-color-light;
+    line-height: $base-line-height;
   }
   .clockdiv_cont {
     display: inline-grid;
