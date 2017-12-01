@@ -299,7 +299,7 @@ section.extra-info {
     @include min-media-query($on-laptop) {
         padding: $spacing-unit * 3.25 0;
         height: 100%;
-        max-height: em(1000);
+        // max-height: em(1000);
         .pictures {
             padding-top: $spacing-unit * 2;
         }

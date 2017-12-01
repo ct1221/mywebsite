@@ -265,7 +265,7 @@ Zepto(function($) {
     }
 
     // var deadline = new Date(Date.parse(new Date()) + 222 * 24 * 60 * 60 * 1000);
-    initializeClock('clockdiv', "November 22 2017");
+    initializeClock('clockdiv', "June 2 2018");
 
     $('.open-countdown').click(function(e) {
         e.preventDefault();
