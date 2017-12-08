@@ -86,15 +86,11 @@
     @include transition-easy(0.3s);
 
     &:hover {
-        @include transform(rotate(180deg));
+        @include transform(scale(1.1));
     }
 
     @include min-media-query($on-palm) {
         max-width: 40px;
-    }
-
-    @include min-media-query($on-monitor) {
-        max-width: 60px;
     }
 
   }

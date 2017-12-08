@@ -35,7 +35,8 @@
         }
         .button {
             width: 150px;
-            margin: $spacing-unit auto;
+            margin-left: auto;
+            margin-right: auto;
             @include min-media-query($on-ipad) {
                 width: 200px;
             }
@@ -789,7 +790,7 @@ a.close-countdown {
   right: 1.875rem;
   @include transition-easy(0.3s);
   &:hover {
-      @include transform(rotate(180deg));
+      @include transform(scale(1.1));
   }
 }
 
