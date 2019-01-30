@@ -6,7 +6,10 @@
   <title>{% if page.pageTitle %}{{ page.pageTitle | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 
   <link href="{{ "/css/main.css" | prepend: site.baseurl }}" rel="stylesheet">
-  <link rel="shortcut icon" type="image/x-icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ "/favicon.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ "/logo-57x57.png" | prepend: site.baseurl }}" />
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ "/logo-72x72.png" | prepend: site.baseurl }}" />
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ "/logo-144x144.png" | prepend: site.baseurl }}" />
 
   <!-- Script -->
   <script>
