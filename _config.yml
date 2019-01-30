@@ -23,5 +23,5 @@ markdown: kramdown
 google_analytics: UA-58112357-2
 
 # Social SEO Tags
-plugins:
+plugins_dir:
   - jekyll-seo-tag
