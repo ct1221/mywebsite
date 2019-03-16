@@ -232,10 +232,11 @@
   .footer-col-2 {
       width: -webkit-calc(20% - (#{$spacing-unit} / 2));
       width: calc(20% - (#{$spacing-unit} / 2));
-      margin-top: em(10);
+      position: relative;
+      bottom: 0;
       @include transition-easy(0.3s);
       &:hover {
-        margin: 0;
+        bottom: em(10);
       }
   }
   .footer-col-3 {

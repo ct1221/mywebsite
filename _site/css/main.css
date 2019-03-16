@@ -758,12 +758,13 @@ pre {
   .footer-col-2 {
     width: -webkit-calc(20% - (1.875em / 2));
     width: calc(20% - (1.875em / 2));
-    margin-top: 0.625em;
+    position: relative;
+    bottom: 0;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s; }
     .footer-col-2:hover {
-      margin: 0; }
+      bottom: 0.625em; }
 
   .footer-col-3 {
     width: -webkit-calc(45% - (1.875em / 2));
