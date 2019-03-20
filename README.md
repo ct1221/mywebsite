@@ -1,2 +1,2 @@
-# celtsontoote.github.io
+# celtson.com
 # This is my personal website
