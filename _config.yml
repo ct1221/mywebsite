@@ -13,8 +13,9 @@ description: > # this means to ignore newlines until "baseurl:"
   information about myself, and samples of some of my current work.
   These work range from website design to web devlopment.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://celtson.com" # the base hostname & protocol for your site
+url: "https://celtson.com" # the base hostname & protocol for your site
 github_username: ct1221
+image: /img/og-home.png
 
 # Build settings
 markdown: kramdown
