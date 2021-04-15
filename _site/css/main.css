@@ -464,7 +464,7 @@ section.about-intro .intro .button.contact { margin-right: 1em; }
 
 @media only screen and (min-width: 800px) { section.about-intro { padding-top: 15em; }
   section.about-intro .wrapper { max-width: calc(1280px - (1.875em * 2)); position: relative; }
-  section.about-intro .wrapper::before { content: ""; background: url("/img/about/Celtson-Illustration.svg") top center/cover no-repeat; height: 540px; position: absolute; bottom: 0; left: -5em; width: 500px; z-index: 0; }
+  section.about-intro .wrapper::before { content: ""; background: url("/img/about/Celtson-illustration.svg") top center/cover no-repeat; height: 540px; position: absolute; bottom: 0; left: -5em; width: 500px; z-index: 0; }
   section.about-intro .intro { width: 65%; } }
 
 section.expertise { background-color: #fff; color: #31424c; padding: 3.75em 0; position: relative; -webkit-box-shadow: inset 0px 3px 10px -1px rgba(0, 0, 0, 0.3); -moz-box-shadow: inset 0px 3px 10px -1px rgba(0, 0, 0, 0.3); box-shadow: inset 0px 3px 10px -1px rgba(0, 0, 0, 0.3); }
