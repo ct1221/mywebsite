@@ -46,11 +46,11 @@ $mini-space: 0.5em;
 $spacing-unit:          1.875em;
 
 // My Color Additions
-$primary-color:         #12a6fb;
-$primary-color-light:   #b3e4ff;
-$primary-color-dark:    #0a75c4;
-$accent-color:          #cddc39;
-$accent-color-2:        #ffc107;
+$primary-color:         #414042;
+$primary-color-light:   lighten($primary-color, 20%);
+$primary-color-dark:   	#000;
+$accent-color:          #5393ac;
+$accent-color-2:        #ddbf22;
 
 $background-color:      #e4edf4;
 $text-color-light:      $background-color;

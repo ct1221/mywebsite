@@ -264,7 +264,7 @@ pre {
     border-radius: 25px;
     @include transition-easy(0.3s);
     &.transparent {
-        border: 1px solid $white;
+        border: 2px solid $white;
         font-size: rem(16);
         &.active, &:hover {
             color: $primary-color;

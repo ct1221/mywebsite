@@ -82,15 +82,13 @@
     position: absolute;
     top: 5%;
     left: 5%;
-    max-width: 20px;
+    img {
+      max-width: 30px;
+    }
     @include transition-easy(0.3s);
 
     &:hover {
         @include transform(scale(1.1));
-    }
-
-    @include min-media-query($on-palm) {
-        max-width: 40px;
     }
 
   }
