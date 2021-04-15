@@ -687,6 +687,8 @@ section.portfolio-items.show-item .portfolio-info { -webkit-transform: translate
 
 .modal-window .resume-footer .button:hover { color: #000; background-color: #fff; }
 
+.modal-window .resume-footer .button::after { display: none; }
+
 .modal-show { opacity: 1; left: 50%; transform: translateX(-50%); }
 
 .modal-cover { background-color: black; opacity: 0; position: fixed; z-index: -1; width: 100%; height: 100vh; top: 0; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
