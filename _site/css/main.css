@@ -249,6 +249,8 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .fa-clock-o:before { content: "\f017"; }
 
+.text-center { text-align: center; }
+
 /** Site header */
 .site-header { min-height: 3.5rem; position: relative; background-color: #fff; z-index: 1; -webkit-box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.1); box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.1); }
 
@@ -522,7 +524,9 @@ section.quote p { font-size: 1.625em; margin-bottom: 0; }
 /* - - - - - PORTFOLIO PAGE - - - - -  */
 article.post { background-color: #fff; }
 
-.portfolio-info { padding-bottom: 3.28125em; color: #31424c; text-align: center; -webkit-transition: all 0.5s ease 0.15s; -moz-transition: all 0.5s ease 0.15s; transition: all 0.5s ease 0.15s; -webkit-transform: translateY(-15%); -moz-transform: translateY(-15%); -ms-transform: translateY(-15%); transform: translateY(-15%); }
+.portfolio-info { padding-bottom: 3.28125em; color: #31424c; -webkit-transition: all 0.5s ease 0.15s; -moz-transition: all 0.5s ease 0.15s; transition: all 0.5s ease 0.15s; -webkit-transform: translateY(-15%); -moz-transform: translateY(-15%); -ms-transform: translateY(-15%); transform: translateY(-15%); }
+
+.portfolio-info.center { text-align: center; }
 
 .portfolio-info .button { max-width: 10.625em; margin: 0 auto; }
 
@@ -554,7 +558,7 @@ section.portfolio .prev.arrow .fa { padding: 2px 20px 2px 16px; }
 
 section.portfolio:hover .arrow { opacity: 1; }
 
-.portfolio-slider { text-align: center; padding: 3.75em 1.875em; position: relative; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
+.portfolio-slider { padding: 3.75em 1.875em; position: relative; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
 
 .portfolio-slider .scroll-me { display: none; opacity: 0; -webkit-transform: rotate(35deg); -moz-transform: rotate(35deg); -ms-transform: rotate(35deg); transform: rotate(35deg); }
 

@@ -340,9 +340,11 @@ article.post {
 .portfolio-info {
     padding-bottom: $spacing-unit * 1.75;
     color: $text-color-dark;
-    text-align: center;
     @include transition(all 0.5s ease 0.15s);
     @include transform(translateY(-15%));
+    &.center {
+      text-align: center;
+    }
     .button {
       max-width: em(170);
       margin: 0 auto;
@@ -407,7 +409,6 @@ section.portfolio {
     }
 }
 .portfolio-slider {
-    text-align: center;
     padding: $spacing-unit * 2 $spacing-unit;
     position: relative;
     @include transition-easy(0.3s);
