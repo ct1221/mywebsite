@@ -94,8 +94,12 @@ li > ul, li > ol { margin-bottom: 0; }
 /** Headings */
 h1, h2, h3, h4, h5, h6 { font-family: "Josefin Slab", serif; }
 
+h3 { font-size: 1.75em; }
+
 /** Links */
-a { color: #414042; text-decoration: none; }
+a { color: #5393ac; text-decoration: none; }
+
+a:hover { color: #42768a; }
 
 a.light-link { color: #fff; }
 
@@ -344,7 +348,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .page-content p { font-size: 1.25em; line-height: 1.75em; }
 
-.page-content h1, .page-content h2 { font-size: 2em; font-weight: 200; line-height: 1.5em; }
+.page-content h1, .page-content h2 { font-size: 2.25em; font-weight: 200; line-height: 1.5em; }
 
 .page-heading { font-size: 1.125em; }
 
@@ -538,21 +542,21 @@ article.post { background-color: #fff; }
 
 section.portfolio { position: relative; padding-bottom: 3.75em; }
 
-section.portfolio .arrow, section.portfolio .arrow.prev { position: absolute; top: 50%; transform: translateY(-50%); right: 4%; width: 6em; opacity: 0; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
+section.portfolio .arrow, section.portfolio .arrow.prev { position: absolute; top: 6%; transform: translateY(-50%); right: 0%; width: 6em; opacity: 0; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
 
 @media only screen and (min-width: 800px) { section.portfolio .arrow, section.portfolio .arrow.prev { opacity: 1; } }
 
 @media only screen and (max-width: 600px) { section.portfolio .arrow, section.portfolio .arrow.prev { display: none; } }
 
-section.portfolio .arrow:hover { right: 3.5%; }
+section.portfolio .arrow:hover { right: 0.5%; }
 
 section.portfolio .arrow .fa { color: #5393ac; border: 2px solid #5393ac; padding: 2px 16px 2px 20px; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; border-radius: 50%; }
 
 section.portfolio .arrow .fa:hover { background-color: #5393ac; color: #fff; }
 
-section.portfolio .prev.arrow { left: 4%; }
+section.portfolio .prev.arrow { left: 0%; }
 
-section.portfolio .prev.arrow:hover { left: 3.5%; }
+section.portfolio .prev.arrow:hover { left: 0.5%; }
 
 section.portfolio .prev.arrow .fa { padding: 2px 20px 2px 16px; }
 

@@ -368,9 +368,9 @@ section.portfolio {
     padding-bottom: $spacing-unit * 2;
     .arrow {
         position: absolute;
-        top: 50%;
+        top: 6%;
         transform: translateY(-50%);
-        right: 4%;
+        right: 0%;
         width: 6em;
         opacity: 0;
         @include min-media-query($on-ipad) {
@@ -381,7 +381,7 @@ section.portfolio {
         }
         @include transition-easy(0.3s);
         &:hover {
-            right: 3.5%;
+            right: 0.5%;
         }
         .fa {
             color: $accent-color;
@@ -394,9 +394,9 @@ section.portfolio {
             }
         }
         &.prev {
-            left: 4%;
+            left: 0%;
             &:hover {
-                left: 3.5%;
+                left: 0.5%;
             }
             @extend .arrow;
             .fa {
