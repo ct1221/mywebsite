@@ -412,6 +412,9 @@ section.portfolio {
     padding: $spacing-unit * 2 $spacing-unit;
     position: relative;
     @include transition-easy(0.3s);
+    .back-link {
+      font-size: em(22);
+    }
     .scroll-me {
       display: none;
       opacity: 0;

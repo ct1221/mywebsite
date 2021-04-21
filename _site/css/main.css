@@ -564,6 +564,8 @@ section.portfolio:hover .arrow { opacity: 1; }
 
 .portfolio-slider { padding: 3.75em 1.875em; position: relative; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
 
+.portfolio-slider .back-link { font-size: 1.375em; }
+
 .portfolio-slider .scroll-me { display: none; opacity: 0; -webkit-transform: rotate(35deg); -moz-transform: rotate(35deg); -ms-transform: rotate(35deg); transform: rotate(35deg); }
 
 @media only screen and (min-width: 800px) { .portfolio-slider .scroll-me { display: block; position: absolute; top: 450px; right: 0; color: #ddbf22; animation: fade-in 10s 1.5s ease, scroll-me 2s ease 5; } }
