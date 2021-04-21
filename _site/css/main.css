@@ -532,7 +532,7 @@ article.post { background-color: #fff; }
 
 .portfolio-info.center { text-align: center; }
 
-.portfolio-info .button { max-width: 10.625em; margin: 0 auto; }
+.portfolio-info .button { display: inline-block; margin: 0 auto; }
 
 .portfolio-info .wrapper { padding: 0; }
 
