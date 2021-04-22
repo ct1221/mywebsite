@@ -574,7 +574,7 @@ section.portfolio:hover .arrow { opacity: 1; }
 
 .portfolio-slider .scroll-me p { margin: 0; }
 
-@media only screen and (min-width: 1224px) { .portfolio-slider.wrapper { max-width: calc(1280px - (1.875em * 2)); } }
+@media only screen and (min-width: 1224px) { .portfolio-slider.wrapper { max-width: calc(1480px - (1.875em * 2)); } }
 
 .portfolio-slider .portfolio-image .desktop-image { margin-right: 1.875em; max-height: 390px; overflow-y: hidden; padding: 0; -webkit-box-shadow: 0px 6px 25px 0px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0px 6px 25px 0px rgba(0, 0, 0, 0.3); box-shadow: 0px 6px 25px 0px rgba(0, 0, 0, 0.3); }
 

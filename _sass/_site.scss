@@ -434,7 +434,7 @@ section.portfolio {
     }
     &.wrapper {
         @include min-media-query($on-laptop) {
-            max-width: calc(1280px - (1.875em * 2));
+            max-width: calc(1480px - (1.875em * 2));
         }
     }
     .portfolio-image {
