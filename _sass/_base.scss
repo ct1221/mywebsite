@@ -232,6 +232,9 @@ pre {
  * Columns
  */
 .half-col {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
   @include min-media-query($on-palm) {
       width: 50%;
       float: left;

@@ -338,6 +338,7 @@ article.post {
     background-color: $white;
 }
 .portfolio-info {
+    margin-top: $spacing-unit;
     padding-bottom: $spacing-unit * 1.75;
     color: $text-color-dark;
     @include transition(all 0.5s ease 0.15s);
