@@ -1,7 +1,7 @@
 ---
-layout: projects/case-study-1
-permalink: /portfolio/case-study-1
-pageTitle: Celtson Toote - Case Study 1
+layout: projects/project-1
+permalink: /portfolio/project-1
+pageTitle: Celtson Toote - Project 1
 title: Portfolio
 image: /img/og-portfolio.png
 ---
