@@ -8,15 +8,15 @@
 /** ========================================= **/
 
 /* Local Font Families */
-@font-face {
-	font-family: 'Josefin Sans';
-	src: url('../fonts/josefinsans/Josefin-Sans-300.ttf');
-}
-
-@font-face {
-	font-family: 'Josefin Slab';
-	src: url('../fonts/josefinslab/Josefin-Slab-regular.ttf');
-}
+// @font-face {
+// 	font-family: 'Josefin Sans';
+// 	src: url('../fonts/josefinsans/raleway-300.ttf');
+// }
+//
+// @font-face {
+// 	font-family: 'Josefin Slab';
+// 	src: url('../fonts/josefinslab/Josefin-Slab-regular.ttf');
+// }
 
 // Fonts
 $georgia: Georgia, Cambria, "Times New Roman", Times, serif;
@@ -26,15 +26,16 @@ $monospace: "Bitstream Vera Sans Mono", Consolas, Monaco, 'Andale Mono', monospa
 $palatino: Palatino, "Times New Roman", Times, serif;
 $verdana: Verdana, Geneva, sans-serif;
 $myriad: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-$josefin-slab: 'Josefin Slab', serif;
-$josefin-sans: 'Josefin Sans', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+$raleway: 'Raleway', sans-serif;
 
 // Our variables
-$base-font-family:      $josefin-sans;
+$base-font-family:      $raleway;
+$parent-font-family:    $montserrat;
 $base-font-size:        1em;
 $base-size:             16;
 $base-font-weight:      400;
-$light-font-weight:     100;
+$light-font-weight:     200;
 $small-font-size:       $base-font-size * 0.875;
 $base-line-height:      1.75rem;
 $base-opacity:          0.5;
@@ -63,7 +64,7 @@ $grey-color-light:      lighten($grey-color, 40%);
 $grey-color-dark:       darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:         980px;
+$content-width:         1440px;
 
 $on-finger:             400px;
 $on-palm:               600px;
@@ -170,5 +171,6 @@ $on-monitor:            1824px;
         "base",
         "layout",
 				"site",
-        "syntax-highlighting"
+        "syntax-highlighting",
+				"flexboxgrid"
 ;

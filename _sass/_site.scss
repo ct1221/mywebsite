@@ -28,9 +28,8 @@
             font-size: 48px;
         }
         .page-heading {
-            margin-bottom: 0;
             line-height: 1.1;
-            font-family: $josefin-sans;
+            font-family: $parent-font-family;
             // animation: floating 8s $ease-in-out-quad 1.5s infinite;
         }
         .button {
@@ -242,7 +241,7 @@ section.expertise {
     }
 }
 section.extra-info {
-    background-color: $primary-color-dark;
+    background-color: $primary-color;
     color: $text-color-light;
     padding: $spacing-unit * 2 0;
     margin: 0 auto;
@@ -329,7 +328,6 @@ section.quote {
   }
   @include min-media-query($on-laptop) {
     font-size: 28px;
-    padding: em(150) 0;
   }
 }
 
@@ -362,6 +360,14 @@ article.post {
     }
     @include max-media-query($on-finger) {
         font-size: 14px;
+    }
+    &__list {
+      padding-left: em(16);
+
+      li {
+        font-size: em(20);
+        margin-bottom: $spacing-unit;
+      }
     }
 }
 section.portfolio {
@@ -433,11 +439,7 @@ section.portfolio {
       }
       p { margin: 0; }
     }
-    &.wrapper {
-        @include min-media-query($on-laptop) {
-            max-width: calc(1480px - (1.875em * 2));
-        }
-    }
+
     .portfolio-image {
         .desktop-image {
             margin-right: $spacing-unit;
@@ -722,7 +724,7 @@ section.portfolio-items {
     .resume-footer {
         padding: 2.2em;
         .button {
-            width: 210px;
+            width: 230px;
             margin: 0 auto;
             color: $white;
             &:hover {
