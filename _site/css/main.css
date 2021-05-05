@@ -77,6 +77,8 @@ body.no-scroll { overflow: hidden; }
 /** Images */
 img { width: 100%; max-width: 100%; height: auto; vertical-align: middle; }
 
+img.border-img { border: 1px solid #747276; }
+
 /** Figures */
 figure > img { display: block; }
 
