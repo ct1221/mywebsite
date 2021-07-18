@@ -372,6 +372,18 @@ article.post {
         margin-bottom: $spacing-unit;
       }
     }
+    &.img-shadow {
+      img {
+        box-shadow: 10px 3px 30px -9px rgba(0,0,0,0.4);
+        -webkit-box-shadow: 10px 3px 30px -9px rgba(0,0,0,0.4);
+        -moz-box-shadow: 10px 3px 30px -9px rgba(0,0,0,0.4);
+      }
+    }
+    &.img-radius {
+      img {
+        border-radius: 40px;
+      }
+    }
 }
 section.portfolio {
     position: relative;

@@ -243,6 +243,8 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .fa-behance:before { content: "\f1b4"; }
 
+.fa-dribbble:before { content: "\f17d"; }
+
 .fa-chevron-down:before { content: "\f078"; }
 
 .fa-angle-left:before { content: "\f104"; }
@@ -547,6 +549,10 @@ article.post { background-color: #fff; }
 .portfolio-info__list { padding-left: 1em; }
 
 .portfolio-info__list li { font-size: 1.25em; margin-bottom: 1.875em; }
+
+.portfolio-info.img-shadow img { box-shadow: 10px 3px 30px -9px rgba(0, 0, 0, 0.4); -webkit-box-shadow: 10px 3px 30px -9px rgba(0, 0, 0, 0.4); -moz-box-shadow: 10px 3px 30px -9px rgba(0, 0, 0, 0.4); }
+
+.portfolio-info.img-radius img { border-radius: 40px; }
 
 section.portfolio { position: relative; padding-bottom: 3.75em; }
 
