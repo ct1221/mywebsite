@@ -25,6 +25,12 @@
 
   a:hover { text-decoration: underline; }
 
+  @include max-media-query($on-palm) {
+    .site-title, h1, h2 {
+      font-size: 1.75rem;
+    }
+  }
+
 }
 
 

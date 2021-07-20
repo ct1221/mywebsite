@@ -59,13 +59,16 @@
   @include min-media-query($on-laptop) { font-size: 22px; }
 }
 .site-title {
-    font-size: em(48);
+    font-size: em(32);
     font-weight: 300;
     line-height: 1em;
     letter-spacing: -1px;
     margin-bottom: 0;
     padding: em(16);
     display: block;
+    @include min-media-query($on-laptop) {
+      font-size: em(48);
+    }
 }
 
 .menu-header {
@@ -259,8 +262,12 @@
       line-height: 1.75em;
     }
     h1, h2 {
-      font-size: em(36);
+      font-size: em(32);
       line-height: 1.5em;
+      @include min-media-query($on-palm) {
+        font-size: em(36);
+
+      }
     }
 }
 .page-heading {
