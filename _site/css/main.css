@@ -390,6 +390,15 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 /** ========================================= **/
 /** Don't forget to design mobile first bud!  **/
 /** ========================================= **/
+/** WebstaurantStore **/
+.webstore .intro-text { padding-top: 0.9375em; color: #414042; text-align: center; }
+
+@media only screen and (min-width: 800px) { .webstore section.about-intro { padding-top: 2em; } }
+
+.webstore .web-info { background-color: #fff; color: #414042; padding-top: 3.75em; }
+
+.webstore a:hover { text-decoration: underline; }
+
 /* - - - - - HOME PAGE - - - - -  */
 .home-page { background-color: #414042; }
 

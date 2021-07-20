@@ -2,6 +2,32 @@
 /** Don't forget to design mobile first bud!  **/
 /** ========================================= **/
 
+/** WebstaurantStore **/
+
+.webstore {
+  .intro-text {
+    padding-top: 0.9375em;
+    color: $primary-color;
+    text-align: center;
+  }
+
+  @include min-media-query($on-ipad) {
+    section.about-intro {
+      padding-top: 2em;
+    }
+  }
+
+  .web-info {
+    background-color: $white;
+    color: $primary-color;
+    padding-top: 3.75em;
+  }
+
+  a:hover { text-decoration: underline; }
+
+}
+
+
 /* - - - - - HOME PAGE - - - - -  */
 .home-page {
     background-color: $primary-color;
